@@ -32,7 +32,7 @@ namespace Tests.w3schoolsTests
 
         public void TearDown()
         {
-            //Driver.ShutDownDriver();
+            Driver.ShutDownDriver();
         }
     }
 }

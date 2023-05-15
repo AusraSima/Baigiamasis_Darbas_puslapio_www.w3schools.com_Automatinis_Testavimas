@@ -17,22 +17,19 @@ namespace Framework.Pages.w3schools
             Common.WaitForElementToNotContainText(buttonAcceptCookies, "Accept all &; visit the site");
         }
                 
-        //Patikrinti Meniu mygtuku veikima
+        //Meniu mygtukai
         public static void ClickLogoButton()
         {
-            string locator = "/html/body/div[3]/a[1]/i";
-            Common.Click(locator);
+            string locator = "/html/body/div[3]/a[1]";
+            Common.Click(locator);            
         }
 
         public static void ClickTutorialsButton()
         {
-            string locator = "//*[@id='navbtn_menu']/i[1]";
-            string button = "//*[@id='navbtn_tutorials']";
-            //string button = "//*[@id='myAccordion']/div/a[1]";
+            string locator = "//*[@id='myAccordion']/div/a[1]";
+            Common.Click(locator);
+            //Common.WaitForElementToContainText(locator, "open_xs_menu(tutorials);");
             //Common.Click(locator);
-            //Common.WaitForElementToContainText(locator, "overflow:visible");
-            //Common.Click(button);
-            Common.MeniuMygtukai(button);
         }
 
         public static void ClickReferencesButton()
@@ -59,16 +56,16 @@ namespace Framework.Pages.w3schools
             Common.Click(locator);
         }
 
-        //Patikrinti linkus
-        //public static void ClickLink()
-        //{
+        //Linkai
+        public static void ClickLink()
+        {
 
-        //}
+        }
 
-        ////Patikrinti paieskos veikima
-        //public static void Search()
-        //{
+        //Paieska
+        public static void Search()
+        {
 
-        //}
+        }
     }
 }
