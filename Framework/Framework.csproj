@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Driver.cs" />
     <Compile Include="Pages\Common.cs" />
+    <Compile Include="Pages\Locators.cs" />
     <Compile Include="Pages\w3schools\Homepage.cs" />
     <Compile Include="Pages\w3schools\Tutorials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

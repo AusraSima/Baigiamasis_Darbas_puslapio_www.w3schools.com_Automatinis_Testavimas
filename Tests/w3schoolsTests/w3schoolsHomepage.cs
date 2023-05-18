@@ -20,19 +20,29 @@ namespace Tests.w3schoolsTests
 
         public void CheckMenuButtons()
         {
-            Homepage.ClickLogoButton();
             Homepage.ClickTutorialsButton();
-            //Homepage.ClickReferencesButton();
-            //Homepage.ClickExercicesButton();
-            //Homepage.ClickBootcampsButton();
-            //Homepage.ClickVideosButton();
+            Homepage.ClickReferencesButton();
+            Homepage.ClickExercicesButton();
+            Homepage.ClickBootcampsButton();
+            Homepage.ClickVideosButton();
+            Homepage.ClickUpgradeButton();
+            Homepage.ClickGetCertifiedButton();
+            Homepage.ClickSignUpButton();
+            Homepage.ClickLogInButton();
+            Homepage.ClickDarkModeButton();
+            Homepage.ClickGlobeButton();
+            Homepage.ClickSearchButton();
+
+            //Paieskos laukas
+            Homepage.ClickNotSureLink();
+            Homepage.ClickSearchOurTutorialsLink();
         }
 
         [TearDown]
 
         public void TearDown()
         {
-            Driver.ShutDownDriver();
+            //Driver.ShutDownDriver();
         }
     }
 }

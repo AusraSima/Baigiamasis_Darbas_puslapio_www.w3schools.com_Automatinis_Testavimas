@@ -6,6 +6,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 using SeleniumExtras.WaitHelpers;
 using OpenQA.Selenium.Chrome;
+using Framework.Pages.w3schools;
 
 namespace Framework.Pages
 {
@@ -27,16 +28,20 @@ namespace Framework.Pages
             wait.Until(driver => !driver.FindElement(By.XPath(locator)).Text.Contains(text));
         }
 
-        internal static void WaitForElementToContainText(string locator, string text)
+        
+        internal static string GetElementValue(string locator, string attribute)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(5));
-            wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(text));
+            return GetElement(locator).GetAttribute(attribute);
         }
 
-        internal static void MeniuMygtukai(string locator)
+        internal static void SendKeys(string locator, string keys)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(20));
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+            GetElement(locator).SendKeys(keys);
+        }
+
+        internal static string GetElementText(string locator)
+        {
+            return GetElement(locator).Text;
         }        
     }    
 }
