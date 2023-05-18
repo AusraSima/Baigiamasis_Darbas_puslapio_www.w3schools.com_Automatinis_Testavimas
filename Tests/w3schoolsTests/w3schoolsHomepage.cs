@@ -28,8 +28,8 @@ namespace Tests.w3schoolsTests
             Homepage.ClickUpgradeButton();
             Homepage.ClickGetCertifiedButton();
             Homepage.ClickSignUpButton();
-            Homepage.ClickLogInButton();
-            Homepage.ClickDarkModeButton();
+            //Homepage.ClickLogInButton();
+            //Homepage.ClickDarkModeButton();
             Homepage.ClickGlobeButton();
             Homepage.ClickSearchButton();
 

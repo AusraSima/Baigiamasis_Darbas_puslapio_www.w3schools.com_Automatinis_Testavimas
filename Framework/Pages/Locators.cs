@@ -22,6 +22,9 @@ namespace Framework.Pages
             internal static string inputNotSureLink = "//*[@id='main']/div[2]/div/h4/a";
             internal static string inputSearchOurTutorialsLink = "//*[@id='search2']";
             internal static string backToHomepage = "//*[@id='root']/div/div/div[2]/div/a";
+            internal static string selectLanguage = "//*[@id=':0.targetLanguage']/span/a";
+            internal static string languageTable = "//*[@id=':1.menuBody']";
+            internal static string selectLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div/span[2]";
         }
     }
 }

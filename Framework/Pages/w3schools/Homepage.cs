@@ -102,6 +102,9 @@ namespace Framework.Pages.w3schools
         public static void ClickGlobeButton()
         {
             Common.Click(Locators.HomepageButtons.inputGlobe);
+            Common.Click(Locators.HomepageButtons.selectLanguage);
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.languageTable, "lietuvių");
+            Common.Click(Locators.HomepageButtons.selectLietuviu);            
         }
 
         public static void ClickSearchButton()
@@ -118,12 +121,13 @@ namespace Framework.Pages.w3schools
             Driver.NavigateToHomepage();
         }
 
+        //Paieska
         public static void ClickSearchOurTutorialsLink()
         {
             Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, "HTML");
             Common.Click(Locators.HomepageButtons.inputSearchOurTutorialsLink);
             Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
-            //Driver.NavigateToHomepage();
+            Driver.NavigateToHomepage();
         }
 
         //Paieska

@@ -28,7 +28,12 @@ namespace Framework.Pages
             wait.Until(driver => !driver.FindElement(By.XPath(locator)).Text.Contains(text));
         }
 
-        
+        internal static void WaitForElementToBeVisible(string locator, string text)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(5));
+            wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(text));
+        }
+
         internal static string GetElementValue(string locator, string attribute)
         {
             return GetElement(locator).GetAttribute(attribute);
