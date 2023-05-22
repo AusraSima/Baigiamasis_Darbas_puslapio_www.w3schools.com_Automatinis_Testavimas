@@ -6,8 +6,9 @@ namespace Framework.Pages
     internal static class Locators
     {
         internal static class HomepageButtons
-        {    
+        {
             //Menu buttons
+            internal static string inputHome = "/html/body/div[4]/a[1]";
             internal static string inputTutorials = "//*[@id='navbtn_tutorials']";
             internal static string inputReferences = "//*[@id='navbtn_references']";
             internal static string inputExercises = "//*[@id='navbtn_exercises']";

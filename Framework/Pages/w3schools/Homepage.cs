@@ -105,32 +105,17 @@ namespace Framework.Pages.w3schools
         {
             string globeButton = "//*[@id='nav_translate_btn']";
             Common.Click(globeButton);
-            string languageButton = "//*[@class='VIpgJd-yAWNEb-L7lbkb skiptranslate']";
-            Common.JustWait();
+            string languageButton = "//*[@id=':0.targetLanguage']";
+            Common.WaitForElementToBeVisible(languageButton, "Pasirinkti kalbą");
             Common.Click(languageButton);
 
-            string iframe = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[1]/div/span[2]";
-            //string iframe = "//*[@name='cnftComm']";
+            string iframe = "//*[@title='Kalbos Vertėjo valdiklis']";
             
-            //string iframeLocator = "cnftComm";
             Common.SwitchToIframeByLocator(iframe);
 
-            string headinglocator = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[1]/div/span[2]";
-
-            return Common.GetElementText(headinglocator);
-
-
-            //Common.Click(Locators.HomepageButtons.inputGlobeButton);
-            ////Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputSelectLanguage, "Pasirinkti kalbą");
-            //Common.Click(Locators.HomepageButtons.inputSelectLanguage);
-            ////Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputIframeLanguages, "Pasirinkti kalbą");
-            //Common.SwitchToIframeByLocator(Locators.HomepageButtons.inputIframeLanguages);
-
-            //string languages = Common.GetElementText(Locators.HomepageButtons.inputIframeLanguages);
-
-            //Common.SwitchToDefaultContent();
-
-            //return languages;
+            string languageLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div";
+            Common.Click(languageLietuviu);
+            return Common.GetElementText(languageLietuviu);                      
         }
 
 

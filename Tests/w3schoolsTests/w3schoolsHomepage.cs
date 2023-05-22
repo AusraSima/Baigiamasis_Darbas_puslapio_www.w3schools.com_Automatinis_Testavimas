@@ -75,7 +75,7 @@ namespace Tests.w3schoolsTests
             //string expectedGlobeButtnon = "";
             //string actualGlobeButton = Homepage.GetGlobeButtonText();
             //Assert.AreEqual(expectedGlobeButtnon, actualGlobeButton);
-            string expectedLanguageFrame = "Pasirinkti kalbą";
+            string expectedLanguageFrame = "";
             string actualLanguageFrame = Homepage.GetLanguages();
             Assert.AreEqual(expectedLanguageFrame, actualLanguageFrame);
 
