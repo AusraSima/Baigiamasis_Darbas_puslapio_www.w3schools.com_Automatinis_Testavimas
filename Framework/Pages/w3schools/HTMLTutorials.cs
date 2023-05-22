@@ -19,5 +19,14 @@ namespace Framework.Pages.w3schools
             Common.Click(buttonAcceptCookies);
             Common.WaitForElementToNotContainText(buttonAcceptCookies, "Accept all &; visit the site");
         }
+
+        public static void TryItYourselfField()
+        {
+            Common.Click(Locators.HTMLTutorialsButtons.inputTryItYourself);
+            Common.JustWait();
+            Common.SendKeys(Locators.HTMLTutorialsButtons.inputHeading, "Pavadinimas");
+            Common.SendKeys(Locators.HTMLTutorialsButtons.inputParagraph, "Paragrafas");
+            Common.Click(Locators.HTMLTutorialsButtons.inputRunButton);
+        }
     }
 }

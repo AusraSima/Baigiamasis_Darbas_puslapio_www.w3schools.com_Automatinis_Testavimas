@@ -1,4 +1,5 @@
-﻿using static Framework.Pages.Locators;
+﻿using OpenQA.Selenium.DevTools.V110.Input;
+using static Framework.Pages.Locators;
 
 namespace Framework.Pages
 {
@@ -34,6 +35,23 @@ namespace Framework.Pages
             internal static string selectLanguage = "//*[@id=':0.targetLanguage']/span/a";
             internal static string languageTable = "//*[@id=':1.menuBody']";
             internal static string selectLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div/span[2]";
+        }
+
+        internal static class LogInPageButtons
+        {
+            internal static string inputEmailAddress = "//*[@id='modalusername']";
+            internal static string inputPassword = "//*[@id='current-password']";
+            internal static string inputLogInButton = "//*[@id='root']/div/div/div[4]/div[1]/div/div[4]/div[1]/button";
+            internal static string inputLogOutButton = "//*[@id='navigation']/div[2]/div";
+            internal static string inputHomeButton = "//*[@id='root']/div/div/div[2]/div/a/svg";
+        }
+
+        internal static class HTMLTutorialsButtons
+        {
+            internal static string inputTryItYourself = "//*[@id='main']/div[4]/a";
+            internal static string inputHeading = "//*[@id='textareawrapper'']/div/div[6]/div[1]/div/div/div/div[5]/pre[8]/span/span[4]";
+            internal static string inputParagraph = "//*[@id='textareawrapper']/div/div[6]/div[1]/div/div/div/div[5]/pre[9]/span/span[4]";
+            internal static string inputRunButton = "//*[@id='runbtn']";
         }
     }
 }

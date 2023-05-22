@@ -12,9 +12,15 @@ namespace Tests.w3schoolsTests
         public void SetUp()
         {
             Driver.InitializeDriver();
-            LogIn.Open();
+            LogInVerification.Open();
+        }
 
-            LogIn.AcceptCookies();
+        [Test]
+
+        public void CheckLogIn()
+        {
+            LogInVerification.EnterValidEmail();
+            LogInVerification.ExitValidEmail();
         }
 
         public void TearDown()

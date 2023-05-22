@@ -25,7 +25,7 @@ namespace Tests.w3schoolsTests
 
         public void CheckHTMLTutorials()
         {
-            
+            HTMLTutorials.TryItYourselfField();
         }
 
         [TearDown]

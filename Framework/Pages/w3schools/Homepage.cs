@@ -10,10 +10,8 @@ namespace Framework.Pages.w3schools
         public static void Open()
         {
             Driver.OpenPage("https://www.w3schools.com/");
-        }
-
+        }               
         
-        //Cookies
         public static void AcceptCookies()
         {
             string buttonAcceptCookies = "//*[@id='accept-choices']";
@@ -107,7 +105,8 @@ namespace Framework.Pages.w3schools
         {
             string globeButton = "//*[@id='nav_translate_btn']";
             Common.Click(globeButton);
-            string languageButton = "//*[@id='google_translate_element']";
+            string languageButton = "//*[@class='VIpgJd-yAWNEb-L7lbkb skiptranslate']";
+            Common.JustWait();
             Common.Click(languageButton);
 
             string iframe = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[1]/div/span[2]";
