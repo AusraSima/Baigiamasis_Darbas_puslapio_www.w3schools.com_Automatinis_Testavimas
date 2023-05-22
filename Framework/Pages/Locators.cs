@@ -5,7 +5,8 @@ namespace Framework.Pages
     internal static class Locators
     {
         internal static class HomepageButtons
-        {            
+        {    
+            //Menu buttons
             internal static string inputTutorials = "//*[@id='navbtn_tutorials']";
             internal static string inputReferences = "//*[@id='navbtn_references']";
             internal static string inputExercises = "//*[@id='navbtn_exercises']";
@@ -16,8 +17,16 @@ namespace Framework.Pages
             internal static string inputCreateWebsite = "/html/body/div[3]/div[2]/a[3]";
             internal static string inputSignUp = "//*[@id='signupbtn_topnav']";
             internal static string inputLogIn = "//*[@id='w3loginbtn']";
-            internal static string inputDarkMode = "//*[@id='main']/div[1]/div/a[3]/i";
-            internal static string inputGlobe = "//*[@id='nav_translate_btn']";
+
+            //Right bar buttons
+            internal static string inputDarkFrame = "//*[contains(@id, 'darkmodemenu')]";
+            internal static string inputDarkMode = "//*[@id='darkmodemenu']/label[1]";
+            internal static string inputDarkCode = "//*[@id='darkmodemenu']/label[2]";
+
+            internal static string inputGlobeButton = "//*[@id='nav_translate_btn']/i";
+            internal static string inputIframeLanguages = "/html/body/iframe[4]";
+            internal static string inputSelectLanguage = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[1]";
+
             internal static string inputSearch1 = "//*[@id='nav_search_btn']";
             internal static string inputNotSureLink = "//*[@id='main']/div[2]/div/h4/a";
             internal static string inputSearchOurTutorialsLink = "//*[@id='search2']";

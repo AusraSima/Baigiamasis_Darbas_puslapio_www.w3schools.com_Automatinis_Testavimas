@@ -34,11 +34,11 @@ namespace Framework.Pages
             wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(text));
         }
 
-        internal static string GetElementValue(string locator, string attribute)
+        internal static void JustWait(string locator)
         {
-            return GetElement(locator).GetAttribute(attribute);
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(5));
         }
-
+        
         internal static void SendKeys(string locator, string keys)
         {
             GetElement(locator).SendKeys(keys);
@@ -47,6 +47,17 @@ namespace Framework.Pages
         internal static string GetElementText(string locator)
         {
             return GetElement(locator).Text;
-        }        
+        }
+
+        internal static void SwitchToIframeByLocator(string iframeName)
+        {
+            IWebElement name = GetElement(iframeName);
+            Driver.GetDriver().SwitchTo().Frame(name);
+        }
+
+        internal static void SwitchToDefaultContent()
+        {
+            Driver.GetDriver().SwitchTo().DefaultContent();
+        }
     }    
 }

@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System;
+using System.Threading;
 
 namespace Framework.Pages.w3schools
 {
@@ -33,75 +35,114 @@ namespace Framework.Pages.w3schools
 
         public static string GetTutorialsButtonText()
         {
-            return Common.GetElementValue(Locators.HomepageButtons.inputTutorials, "Tutorials");
+            return Common.GetElementText(Locators.HomepageButtons.inputTutorials);
         }
-
-        public static void ClickReferencesButton()
-        {
-            Common.Click(Locators.HomepageButtons.inputReferences);
-        }
-
+        
         public static string GetReferencesButtonText()
         {
-            return Common.GetElementValue(Locators.HomepageButtons.inputReferences, "References");
+            return Common.GetElementText(Locators.HomepageButtons.inputReferences);
         }
 
-        public static void ClickExercicesButton()
+        public static string GetExercisesButtonText()
         {
-            Common.Click(Locators.HomepageButtons.inputExercises);
+            return Common.GetElementText(Locators.HomepageButtons.inputExercises);
         }
 
-        public static void ClickBootcampsButton()
-        { 
-            Common.Click(Locators.HomepageButtons.inputBootcamps);
-            Driver.NavigateToHomepage();
-
-        }
-
-        public static void ClickVideosButton()
+        public static string GetBootcampsButtonText()
         {
-            Common.Click(Locators.HomepageButtons.inputVideos);
-            Driver.NavigateToHomepage();
+            return Common.GetElementText(Locators.HomepageButtons.inputBootcamps);
         }
-
-        public static void ClickUpgradeButton()
+        
+        public static string GetVideosButtonText()
         {
-            Common.Click(Locators.HomepageButtons.inputUpgrade);
-            Driver.NavigateToHomepage();
+            return Common.GetElementText(Locators.HomepageButtons.inputVideos);
         }
 
-        public static void ClickGetCertifiedButton()
+        public static string GetUpgradeButtonText()
         {
-            Common.Click(Locators.HomepageButtons.inputGetCertified);
-            Driver.ClosePage();
-            Driver.NavigateToHomepage();
+            return Common.GetElementText(Locators.HomepageButtons.inputUpgrade);
         }
 
-        public static void ClickCreateWebsiteButton()
+        public static string GetGetCertifiedButtonText()
         {
-            Common.Click(Locators.HomepageButtons.inputCreateWebsite);
+            return Common.GetElementText(Locators.HomepageButtons.inputGetCertified);
         }
 
-        public static void ClickSignUpButton()
+        public static string GetCreateWebsiteButtonText()
         {
-            Common.Click(Locators.HomepageButtons.inputSignUp);
-            Driver.NavigateToHomepage();
+            return Common.GetElementText(Locators.HomepageButtons.inputCreateWebsite);
         }
 
-        public static void ClickLogInButton()
-        {            
-            Common.Click(Locators.HomepageButtons.inputLogIn);
-            Common.Click(Locators.HomepageButtons.backToHomepage);
-        }
-
-        public static void ClickDarkModeButton()
+        public static string GetSignUpButtonText()
         {
-            Common.Click(Locators.HomepageButtons.inputDarkMode);
+            return Common.GetElementText(Locators.HomepageButtons.inputSignUp);
+        }
+
+        public static string GetLogInButtonText()
+        {
+            return Common.GetElementText(Locators.HomepageButtons.inputLogIn);
+        }
+
+        public static string GetDarkMenuButtonText()
+        {
+            return Common.GetElementText(Locators.HomepageButtons.inputDarkFrame);
+        }
+
+        public static string GetDarkModeButtonText()
+        {
+            return Common.GetElementText(Locators.HomepageButtons.inputDarkMode);
+        }
+
+        public static string GetDarkCodeButtonText()
+        {
+            return Common.GetElementText(Locators.HomepageButtons.inputDarkCode);
+        }
+
+        public static string GetGlobeButtonText()
+        {
+            return Common.GetElementText(Locators.HomepageButtons.inputGlobeButton);
+        }
+
+        public static string GetLanguages()
+        {
+            string globeButton = "//*[@id='nav_translate_btn']";
+            Common.Click(globeButton);
+            string languageButton = "//*[@id='google_translate_element']";
+            Common.Click(languageButton);
+
+            string iframe = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[1]/div/span[2]";
+            //string iframe = "//*[@name='cnftComm']";
+            
+            //string iframeLocator = "cnftComm";
+            Common.SwitchToIframeByLocator(iframe);
+
+            string headinglocator = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[1]/div/span[2]";
+
+            return Common.GetElementText(headinglocator);
+
+
+            //Common.Click(Locators.HomepageButtons.inputGlobeButton);
+            ////Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputSelectLanguage, "Pasirinkti kalbą");
+            //Common.Click(Locators.HomepageButtons.inputSelectLanguage);
+            ////Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputIframeLanguages, "Pasirinkti kalbą");
+            //Common.SwitchToIframeByLocator(Locators.HomepageButtons.inputIframeLanguages);
+
+            //string languages = Common.GetElementText(Locators.HomepageButtons.inputIframeLanguages);
+
+            //Common.SwitchToDefaultContent();
+
+            //return languages;
+        }
+
+
+        public static void WaitForFrameToBeVisible()
+        {
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputDarkFrame, "darkmodemenu");
         }
 
         public static void ClickGlobeButton()
         {
-            Common.Click(Locators.HomepageButtons.inputGlobe);
+            Common.Click(Locators.HomepageButtons.inputGlobeButton);
             Common.Click(Locators.HomepageButtons.selectLanguage);
             Common.WaitForElementToBeVisible(Locators.HomepageButtons.languageTable, "lietuvių");
             Common.Click(Locators.HomepageButtons.selectLietuviu);            
@@ -128,12 +169,6 @@ namespace Framework.Pages.w3schools
             Common.Click(Locators.HomepageButtons.inputSearchOurTutorialsLink);
             Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
             Driver.NavigateToHomepage();
-        }
-
-        //Paieska
-        public static void Search()
-        {
-
-        }
+        }        
     }
 }
