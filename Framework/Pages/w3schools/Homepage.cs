@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace Framework.Pages.w3schools
@@ -20,17 +22,6 @@ namespace Framework.Pages.w3schools
         }
 
         //Meniu mygtukai
-        public static void ClickLogoButton()
-        {
-            string locator = "/html/body/div[3]/a[1]";
-            Common.Click(locator);
-        }
-
-        public static void ClickTutorialsButton()
-        {
-            Common.Click(Locators.HomepageButtons.inputTutorials);
-        }
-
         public static string GetTutorialsButtonText()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputTutorials);
@@ -103,56 +94,60 @@ namespace Framework.Pages.w3schools
 
         public static string GetLanguages()
         {
-            string globeButton = "//*[@id='nav_translate_btn']";
-            Common.Click(globeButton);
-            string languageButton = "//*[@id=':0.targetLanguage']";
-            Common.WaitForElementToBeVisible(languageButton, "Pasirinkti kalbą");
-            Common.Click(languageButton);
-
-            string iframe = "//*[@title='Kalbos Vertėjo valdiklis']";
-            
-            Common.SwitchToIframeByLocator(iframe);
-
-            string languageLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div";
-            Common.Click(languageLietuviu);
-            return Common.GetElementText(languageLietuviu);                      
-        }
-
-
-        public static void WaitForFrameToBeVisible()
-        {
-            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputDarkFrame, "darkmodemenu");
-        }
-
-        public static void ClickGlobeButton()
-        {
             Common.Click(Locators.HomepageButtons.inputGlobeButton);
-            Common.Click(Locators.HomepageButtons.selectLanguage);
-            Common.WaitForElementToBeVisible(Locators.HomepageButtons.languageTable, "lietuvių");
-            Common.Click(Locators.HomepageButtons.selectLietuviu);            
-        }
+            Common.WaitForElementTextToBeVisible(Locators.HomepageButtons.inputLanguageButton, "Pasirinkti kalbą");
+            Common.Click(Locators.HomepageButtons.inputLanguageButton);
+            Common.SwitchToIframeByLocator(Locators.HomepageButtons.inputIframe);
+            Common.Click(Locators.HomepageButtons.inputLanguageLietuviu);
 
-        public static void ClickSearchButton()
+            return Common.GetElementText(Locators.HomepageButtons.inputLanguageLietuviu);
+        }
+       
+        public static string GetSearchButtonText()
         {
-            Common.Click(Locators.HomepageButtons.inputSearch1);
-            Common.GetElementText(Locators.HomepageButtons.inputSearch1);
+            return Common.GetElementText(Locators.HomepageButtons.inputSearch);
         }
 
-
-        //Linkai
-        public static void ClickNotSureLink()
-        {
-            Common.Click(Locators.HomepageButtons.inputNotSureLink);
-            Driver.NavigateToHomepage();
-        }
-
-        //Paieska
-        public static void ClickSearchOurTutorialsLink()
+        public static string ClickSearchOurTutorialsLink()
         {
             Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, "HTML");
             Common.Click(Locators.HomepageButtons.inputSearchOurTutorialsLink);
-            Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
-            Driver.NavigateToHomepage();
-        }        
+            return Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
+        }
+
+        public static string GetNotSureLink()
+        {
+            return Common.GetElementText(Locators.HomepageButtons.inputNotSureLink);
+        }
+
+        public static void CodeGame()
+        {
+            Common.Click(Locators.HomepageButtons.inputPlayGame);
+            
+            List<string> handles = Common.GetWindowHandles();
+            Common.SwitchToWindowByHandle(handles.Last());
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputGoForward);
+            Common.Click(Locators.HomepageButtons.inputGoForward);
+            Common.Click(Locators.HomepageButtons.inputGoForward);
+            Common.Click(Locators.HomepageButtons.inputPlayCode);
+
+            Common.SwitchToWindowByHandle(handles.First());
+        }
+
+
+
+
+
+        
+
+        
+        public static void ClickSearchButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputSearch);
+            Common.GetElementText(Locators.HomepageButtons.inputSearch);
+        }
+
+
+          
     }
 }

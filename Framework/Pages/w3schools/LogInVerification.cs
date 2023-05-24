@@ -20,16 +20,8 @@ namespace Framework.Pages.w3schools
 
         public static void ExitValidEmail()
         {
-            Common.JustWait();
+            Common.WaitForElementToBeVisible(Locators.LogInPageButtons.inputLogOutButton);
             Common.Click(Locators.LogInPageButtons.inputLogOutButton);
-            Common.Click(Locators.LogInPageButtons.inputHomeButton);
-        }
-
-        public static void AcceptCookies()
-        {
-            string buttonAcceptCookies = "//*[@id='accept-choices']";
-            Common.Click(buttonAcceptCookies);
-            Common.WaitForElementToNotContainText(buttonAcceptCookies, "Accept all &; visit the site");
-        }
+        }               
     }
 }

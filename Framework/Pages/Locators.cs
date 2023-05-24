@@ -8,7 +8,8 @@ namespace Framework.Pages
         internal static class HomepageButtons
         {
             //Menu buttons
-            internal static string inputHome = "/html/body/div[4]/a[1]";
+            internal static string inputHome = "/html/body/div[3]/a[1]";
+            internal static string backToHomepage = "/html/body/div[4]/a[1]";
             internal static string inputTutorials = "//*[@id='navbtn_tutorials']";
             internal static string inputReferences = "//*[@id='navbtn_references']";
             internal static string inputExercises = "//*[@id='navbtn_exercises']";
@@ -25,17 +26,21 @@ namespace Framework.Pages
             internal static string inputDarkMode = "//*[@id='darkmodemenu']/label[1]";
             internal static string inputDarkCode = "//*[@id='darkmodemenu']/label[2]";
 
-            internal static string inputGlobeButton = "//*[@id='nav_translate_btn']/i";
-            internal static string inputIframeLanguages = "/html/body/iframe[4]";
-            internal static string inputSelectLanguage = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[1]";
+            internal static string inputGlobeButton = "//*[@id='nav_translate_btn']";
+            internal static string inputLanguageButton = "//*[@id=':0.targetLanguage']";
+            internal static string inputIframe = "//*[@title='Kalbos Vertėjo valdiklis']";
+            internal static string inputLanguageLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div";
 
-            internal static string inputSearch1 = "//*[@id='nav_search_btn']";
-            internal static string inputNotSureLink = "//*[@id='main']/div[2]/div/h4/a";
+            internal static string inputSearch = "//*[@id='nav_search_btn']/i";          
+            
             internal static string inputSearchOurTutorialsLink = "//*[@id='search2']";
-            internal static string backToHomepage = "//*[@id='root']/div/div/div[2]/div/a";
-            internal static string selectLanguage = "//*[@id=':0.targetLanguage']/span/a";
-            internal static string languageTable = "//*[@id=':1.menuBody']";
-            internal static string selectLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div/span[2]";
+            internal static string inputNotSureLink = "//*[@id='main']/div[2]/div/h4/a";
+
+            internal static string inputPlayGame = "//*[@id='main']/div[15]/div/p/a";
+            internal static string inputGoForward = "//*[@id='codeGame-button-forward']";
+            internal static string inputPlayCode = "//*[@id='codeGame-button-runsequence']";
+
+
         }
 
         internal static class LogInPageButtons
@@ -50,7 +55,7 @@ namespace Framework.Pages
         internal static class HTMLTutorialsButtons
         {
             internal static string inputTryItYourself = "//*[@id='main']/div[4]/a";
-            internal static string inputHeading = "//*[@id='textareawrapper'']/div/div[6]/div[1]/div/div/div/div[5]/pre[8]/span/span[4]";
+            internal static string inputHeading = "//*[@id='textareawrapper']/div/div[6]/div[1]/div/div/div/div[5]/pre[8]";
             internal static string inputParagraph = "//*[@id='textareawrapper']/div/div[6]/div[1]/div/div/div/div[5]/pre[9]/span/span[4]";
             internal static string inputRunButton = "//*[@id='runbtn']";
         }

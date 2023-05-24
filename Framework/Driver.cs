@@ -24,13 +24,8 @@ namespace Framework
         {
             driver.Url = url;
             driver.Manage().Window.Maximize();
-        }
-        
-        public static void NavigateToHomepage() 
-        {
-            driver.Navigate().GoToUrl("https://www.w3schools.com/");
         }        
-
+        
         public static void ClosePage()
         {
             driver.SwitchTo().Window(driver.WindowHandles[0]);

@@ -21,84 +21,93 @@ namespace Tests.w3schoolsTests
 
         public void CheckHomepage()
         {
-            //string expectedTutorials = "Tutorials";
-            //string actualTutorials = Homepage.GetTutorialsButtonText();
-            //Assert.AreEqual(expectedTutorials, actualTutorials);
+            //Verify that the homepage is loaded successfully (ikelti komandas)
 
-            //string expectedReferences = "References";
-            //string actualReferences = Homepage.GetReferencesButtonText();
-            //Assert.AreEqual(expectedReferences, actualReferences);
+            string expectedTutorials = "Tutorials";
+            string actualTutorials = Homepage.GetTutorialsButtonText();
+            Assert.AreEqual(expectedTutorials, actualTutorials);
 
-            //string expectedExercises = "Exercises";
-            //string actualExercises = Homepage.GetExercisesButtonText();
-            //Assert.AreEqual(expectedExercises, actualExercises);
+            string expectedReferences = "References";
+            string actualReferences = Homepage.GetReferencesButtonText();
+            Assert.AreEqual(expectedReferences, actualReferences);
 
-            //string expectedBootcamps = "Bootcamps";
-            //string actualBootcamps = Homepage.GetBootcampsButtonText();
-            //Assert.AreEqual(expectedBootcamps, actualBootcamps);
+            string expectedExercises = "Exercises";
+            string actualExercises = Homepage.GetExercisesButtonText();
+            Assert.AreEqual(expectedExercises, actualExercises);
 
-            //string expectedVideos = "Videos";
-            //string actualVideos = Homepage.GetVideosButtonText();
-            //Assert.AreEqual(expectedVideos, actualVideos);
+            string expectedBootcamps = "Bootcamps";
+            string actualBootcamps = Homepage.GetBootcampsButtonText();
+            Assert.AreEqual(expectedBootcamps, actualBootcamps);
 
-            //string expectedUpgrade = "Upgrade";
-            //string actualUpgrade = Homepage.GetUpgradeButtonText();
-            //Assert.AreEqual(expectedUpgrade, actualUpgrade);
+            string expectedVideos = "Videos";
+            string actualVideos = Homepage.GetVideosButtonText();
+            Assert.AreEqual(expectedVideos, actualVideos);
 
-            //string expectedGetCertified = "Get Certified";
-            //string actualGetCertified = Homepage.GetGetCertifiedButtonText();
-            //Assert.AreEqual(expectedGetCertified, actualGetCertified);
+            string expectedUpgrade = "Upgrade";
+            string actualUpgrade = Homepage.GetUpgradeButtonText();
+            Assert.AreEqual(expectedUpgrade, actualUpgrade);
 
-            //string expectedCreateWebsite = "Create Website";
-            //string actualCreateWebsite = Homepage.GetCreateWebsiteButtonText();
-            //Assert.AreEqual(expectedCreateWebsite, actualCreateWebsite);
+            string expectedGetCertified = "Get Certified";
+            string actualGetCertified = Homepage.GetGetCertifiedButtonText();
+            Assert.AreEqual(expectedGetCertified, actualGetCertified);
 
-            //string expectedSignUp = "Sign Up";
-            //string actualSignUp = Homepage.GetSignUpButtonText();
-            //Assert.AreEqual(expectedSignUp, actualSignUp);
+            string expectedCreateWebsite = "Create Website";
+            string actualCreateWebsite = Homepage.GetCreateWebsiteButtonText();
+            Assert.AreEqual(expectedCreateWebsite, actualCreateWebsite);
 
-            //string expectedLogIn = "Log in";
-            //string actualLogIn = Homepage.GetLogInButtonText();
-            //Assert.AreEqual(expectedLogIn, actualLogIn);
+            string expectedSignUp = "Sign Up";
+            string actualSignUp = Homepage.GetSignUpButtonText();
+            Assert.AreEqual(expectedSignUp, actualSignUp);
 
-            //string expectedDarkMenu = "Dark mode\r\nDark code";
-            //string actualDarkMenu = Homepage.GetDarkMenuButtonText();
-            //Assert.AreEqual(expectedDarkMenu, actualDarkMenu);
+            string expectedLogIn = "Log in";
+            string actualLogIn = Homepage.GetLogInButtonText();
+            Assert.AreEqual(expectedLogIn, actualLogIn);
 
-            //string expectedModeValue = "Dark mode";
-            //string expectedCodeValue = "Dark code";
-            //string actualModeValue = Homepage.GetDarkModeButtonText();
-            //string actualCodeValue = Homepage.GetDarkCodeButtonText();            
-            //Assert.AreEqual(expectedModeValue, actualModeValue);
-            //Assert.AreEqual(expectedCodeValue, actualCodeValue);
+            string expectedDarkMenu = "Dark mode\r\nDark code";
+            string actualDarkMenu = Homepage.GetDarkMenuButtonText();
+            Assert.AreEqual(expectedDarkMenu, actualDarkMenu);
 
-            //string expectedGlobeButtnon = "";
-            //string actualGlobeButton = Homepage.GetGlobeButtonText();
-            //Assert.AreEqual(expectedGlobeButtnon, actualGlobeButton);
+            string expectedModeValue = "Dark mode";
+            string expectedCodeValue = "Dark code";
+            string actualModeValue = Homepage.GetDarkModeButtonText();
+            string actualCodeValue = Homepage.GetDarkCodeButtonText();
+            Assert.AreEqual(expectedModeValue, actualModeValue);
+            Assert.AreEqual(expectedCodeValue, actualCodeValue);
+
+            string expectedGlobeButtnon = "";
+            string actualGlobeButton = Homepage.GetGlobeButtonText();
+            Assert.AreEqual(expectedGlobeButtnon, actualGlobeButton);
             string expectedLanguageFrame = "";
             string actualLanguageFrame = Homepage.GetLanguages();
             Assert.AreEqual(expectedLanguageFrame, actualLanguageFrame);
 
+            Homepage.Open(); 
 
+            string expectedSeachButton = "";
+            string actualSearchButton = Homepage.GetSearchButtonText();
+            Assert.AreEqual(expectedSeachButton, actualSearchButton);
+
+            string expectedSearchOurTutorials = "";
+            string actualSearchOurTutorials = Homepage.ClickSearchOurTutorialsLink();
+            Assert.AreEqual(expectedSearchOurTutorials, actualSearchOurTutorials);
+
+            Homepage.Open();
+
+            string expectedNotSureLink = "Not Sure Where To Begin?";
+            string actualNotSureLink = Homepage.GetNotSureLink();
+            Assert.AreEqual(expectedNotSureLink, actualNotSureLink);
+
+            Homepage.CodeGame();
         }
-
-
-       
-        //Homepage.ClickGlobeButton();
-        //Homepage.ClickSearchButton();
-
-        ////Paieskos laukas
-        //Homepage.ClickNotSureLink();
-        //Homepage.ClickSearchOurTutorialsLink();
 
         public void TearDown()
         {
-            //if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            //{
-            //    string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-            //    TestContext.AddTestAttachment(screenshotFilePath);
-            //}
-            //Driver.ShutDownDriver();
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+                TestContext.AddTestAttachment(screenshotFilePath);
+            }
+            Driver.ShutDownDriver();
         }
     }
 }
