@@ -21,7 +21,9 @@ namespace Tests.w3schoolsTests
 
         public void CheckHomepage()
         {
-            //Verify that the homepage is loaded successfully (ikelti komandas)
+            string expectedLogo = "";
+            string actualLogo = Homepage.GetLogoButtonText();
+            Assert.AreEqual(expectedLogo, actualLogo);
 
             string expectedTutorials = "Tutorials";
             string actualTutorials = Homepage.GetTutorialsButtonText();
@@ -86,6 +88,7 @@ namespace Tests.w3schoolsTests
             string expectedSeachButton = "";
             string actualSearchButton = Homepage.GetSearchButtonText();
             Assert.AreEqual(expectedSeachButton, actualSearchButton);
+            //Homepage.GetSearchField();
 
             string expectedSearchOurTutorials = "";
             string actualSearchOurTutorials = Homepage.ClickSearchOurTutorialsLink();
@@ -102,12 +105,12 @@ namespace Tests.w3schoolsTests
 
         public void TearDown()
         {
-            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            {
-                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-                TestContext.AddTestAttachment(screenshotFilePath);
-            }
-            Driver.ShutDownDriver();
+            //if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            //{
+            //    string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+            //    TestContext.AddTestAttachment(screenshotFilePath);
+            //}
+            //Driver.ShutDownDriver();
         }
     }
 }

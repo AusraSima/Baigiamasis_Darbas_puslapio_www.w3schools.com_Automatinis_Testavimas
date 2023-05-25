@@ -33,11 +33,11 @@ namespace Tests.w3schoolsTests
 
         public void TearDown()
         {
-            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            {
-                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-                TestContext.AddTestAttachment(screenshotFilePath);
-            }
+            //if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            //{
+            //    string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+            //    TestContext.AddTestAttachment(screenshotFilePath);
+            //}
             //Driver.ShutDownDriver();
         }
     }

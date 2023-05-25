@@ -21,7 +21,11 @@ namespace Framework.Pages.w3schools
             Common.WaitForElementToNotContainText(buttonAcceptCookies, "Accept all &; visit the site");
         }
 
-        //Meniu mygtukai
+        public static string GetLogoButtonText()
+        {
+            return Common.GetElementText(Locators.HomepageButtons.inputHome);
+        }
+
         public static string GetTutorialsButtonText()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputTutorials);
@@ -108,14 +112,23 @@ namespace Framework.Pages.w3schools
             return Common.GetElementText(Locators.HomepageButtons.inputSearch);
         }
 
-        public static string ClickSearchOurTutorialsLink()
+        public static string GetSearchField()//Cia patikrinti ir pataisyti
         {
-            Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, "HTML");
-            Common.Click(Locators.HomepageButtons.inputSearchOurTutorialsLink);
-            return Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
+            Common.SendKeys(Locators.HomepageButtons.inputSearchField, "Tutorials");
+            Common.Click(Locators.HomepageButtons.inputSearchIcon);
+            Common.SwitchToIframeByLocator(Locators.HomepageButtons.searchdResultField);
+            return Common.GetElementText(Locators.HomepageButtons.searchdResultField);
+
         }
 
-        public static string GetNotSureLink()
+        public static string ClickSearchOurTutorialsLink()
+    {
+        Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, "HTML");
+        Common.Click(Locators.HomepageButtons.inputSearchOurTutorialsLink);
+        return Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
+    }
+
+    public static string GetNotSureLink()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputNotSureLink);
         }
@@ -141,11 +154,11 @@ namespace Framework.Pages.w3schools
         
 
         
-        public static void ClickSearchButton()
-        {
-            Common.Click(Locators.HomepageButtons.inputSearch);
-            Common.GetElementText(Locators.HomepageButtons.inputSearch);
-        }
+        //public static void ClickSearchButton()
+        //{
+        //    Common.Click(Locators.HomepageButtons.inputSearch);
+        //    Common.GetElementText(Locators.HomepageButtons.inputSearch);
+        //}
 
 
           

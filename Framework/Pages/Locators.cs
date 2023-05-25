@@ -31,16 +31,19 @@ namespace Framework.Pages
             internal static string inputIframe = "//*[@title='Kalbos Vertėjo valdiklis']";
             internal static string inputLanguageLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div";
 
-            internal static string inputSearch = "//*[@id='nav_search_btn']/i";          
-            
+            internal static string inputSearch = "//*[@id='nav_search_btn']/i";
+            internal static string inputSearchField = "//*[@id='gsc-i-id1']";
+            internal static string inputSearchIcon = "//*[@id='learntocode_searchicon']";
+            internal static string searchdResultField = "//*[@id='___gcse_0']/div/div/div[1]";
+            internal static string resultFieldOff = "//*[@id='___gcse_0']/div/div/div[1]/div[1]";
+
+            //Kiti
             internal static string inputSearchOurTutorialsLink = "//*[@id='search2']";
             internal static string inputNotSureLink = "//*[@id='main']/div[2]/div/h4/a";
 
             internal static string inputPlayGame = "//*[@id='main']/div[15]/div/p/a";
             internal static string inputGoForward = "//*[@id='codeGame-button-forward']";
             internal static string inputPlayCode = "//*[@id='codeGame-button-runsequence']";
-
-
         }
 
         internal static class LogInPageButtons
@@ -55,6 +58,7 @@ namespace Framework.Pages
         internal static class HTMLTutorialsButtons
         {
             internal static string inputTryItYourself = "//*[@id='main']/div[4]/a";
+            internal static string inputTextArea = "//*[@id='textareawrapper']/div/div[6]";
             internal static string inputHeading = "//*[@id='textareawrapper']/div/div[6]/div[1]/div/div/div/div[5]/pre[8]";
             internal static string inputParagraph = "//*[@id='textareawrapper']/div/div[6]/div[1]/div/div/div/div[5]/pre[9]/span/span[4]";
             internal static string inputRunButton = "//*[@id='runbtn']";

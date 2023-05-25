@@ -9,6 +9,7 @@ using OpenQA.Selenium.Chrome;
 using Framework.Pages.w3schools;
 using System.Linq;
 using System.Collections.Generic;
+using OpenQA.Selenium.Interactions;
 
 namespace Framework.Pages
 {
@@ -83,11 +84,93 @@ namespace Framework.Pages
             Driver.GetDriver().SwitchTo().Window(handle);
         }
 
-        internal static void Write(string locator, string text)
+        internal static void Write1(string locator, string text)
+        {            
+            IWebElement textbox = GetElement(locator);
+            Actions actions = new Actions(Driver.GetDriver());
+            actions.Click(textbox);            
+            actions.SendKeys(Keys.PageUp);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.End);
+            actions.SendKeys(Keys.Control);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.KeyUp(Keys.Control);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace); // tiek daug backspace, nes kitaip tinkamai neveike
+            actions.KeyUp(Keys.Shift);
+            actions.SendKeys(text);
+            actions.Perform();
+        }
+
+        internal static void Write2(string locator, string text)
         {
-            IWebElement headingElement = GetElementByTagName(locator);
-            headingElement.Clear();
-            headingElement.SendKeys(text);
+            IWebElement textbox = GetElement(locator);
+            Actions actions = new Actions(Driver.GetDriver());
+            actions.Click(textbox);
+            actions.SendKeys(Keys.PageUp);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.ArrowDown);
+            actions.SendKeys(Keys.End);
+            actions.SendKeys(Keys.Control);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.SendKeys(Keys.ArrowLeft);
+            actions.KeyUp(Keys.Control);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.SendKeys(Keys.Backspace);
+            actions.KeyUp(Keys.Shift);
+            actions.SendKeys(text);
+            actions.Perform();
         }
     }    
 }

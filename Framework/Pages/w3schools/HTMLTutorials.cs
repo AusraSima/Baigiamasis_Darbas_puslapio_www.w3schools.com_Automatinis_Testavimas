@@ -27,16 +27,21 @@ namespace Framework.Pages.w3schools
 
             List<string> handles = Common.GetWindowHandles();
             Common.SwitchToWindowByHandle(handles.Last());
-            Common.WaitForElementTextToBeVisible(Locators.HTMLTutorialsButtons.inputHeading, "This is a Heading");
-            //string heading = "//*[@id=\"textareawrapper\"]/div/div[6]/div[1]/div/div/div/div[5]/pre[8]";
-            Common.Write("h1", "Tai tik pavadinimas");
-            Common.Write(Locators.HTMLTutorialsButtons.inputParagraph, "Tiesiog paragrafas");
+            Common.WaitForElementTextToBeVisible(Locators.HTMLTutorialsButtons.inputTextArea, "This is a Heading");
             
-            
+            Common.Write1(Locators.HTMLTutorialsButtons.inputTextArea, "Tai tik pavadinimas");
+            Common.GetElementText(Locators.HTMLTutorialsButtons.inputTextArea);
+            Common.Write2(Locators.HTMLTutorialsButtons.inputTextArea, "Tai tik paragrafas");
+            Common.GetElementText(Locators.HTMLTutorialsButtons.inputTextArea);
+            Common.Click(Locators.HTMLTutorialsButtons.inputRunButton);
+
+            //Common.Write(Locators.HTMLTutorialsButtons.inputParagraph, "Tiesiog paragrafas");
 
 
-            //Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.inputHeading);
-            //    Common.SendKeys(Locators.HTMLTutorialsButtons.inputHeading, "Pavadinimas");
+
+
+
+            //Common.SendKeys(Locators.HTMLTutorialsButtons.inputHeading, "Pavadinimas");
             //    Common.SendKeys(Locators.HTMLTutorialsButtons.inputParagraph, "Paragrafas");
             //    Common.Click(Locators.HTMLTutorialsButtons.inputRunButton);
             //    Common.GetElementText(Locators.HTMLTutorialsButtons.inputHeading);
