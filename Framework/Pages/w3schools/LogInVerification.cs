@@ -1,8 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
-
-namespace Framework.Pages.w3schools
+﻿namespace Framework.Pages.w3schools
 {
     public class LogInVerification
     {

@@ -1,9 +1,5 @@
-﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Framework.Pages.w3schools
 {
@@ -13,12 +9,18 @@ namespace Framework.Pages.w3schools
         {
             Driver.OpenPage("https://www.w3schools.com/html/default.asp");
         }
-        //Cookies
         public static void AcceptCookies()
         {
             string buttonAcceptCookies = "//*[@id='accept-choices']";
             Common.Click(buttonAcceptCookies);
             Common.WaitForElementToNotContainText(buttonAcceptCookies, "Accept all &; visit the site");
+        }
+
+        public static void WatchOurVideoField()
+        {
+            Common.Click(Locators.HTMLTutorialsButtons.inputVideoButton);
+            Common.Click(Locators.HTMLTutorialsButtons.playVideoButton);
+            Common.JustWait();            
         }
 
         public static void TryItYourselfField()
@@ -27,27 +29,31 @@ namespace Framework.Pages.w3schools
 
             List<string> handles = Common.GetWindowHandles();
             Common.SwitchToWindowByHandle(handles.Last());
-            Common.WaitForElementTextToBeVisible(Locators.HTMLTutorialsButtons.inputTextArea, "This is a Heading");
+            Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.inputTextArea);
             
-            Common.Write1(Locators.HTMLTutorialsButtons.inputTextArea, "Tai tik pavadinimas");
+            Common.WriteHeading(Locators.HTMLTutorialsButtons.inputTextArea, "Tai tik pavadinimas");
             Common.GetElementText(Locators.HTMLTutorialsButtons.inputTextArea);
-            Common.Write2(Locators.HTMLTutorialsButtons.inputTextArea, "Tai tik paragrafas");
+            Common.WriteParagraph(Locators.HTMLTutorialsButtons.inputTextArea, "Tai tik paragrafas");
             Common.GetElementText(Locators.HTMLTutorialsButtons.inputTextArea);
             Common.Click(Locators.HTMLTutorialsButtons.inputRunButton);
+            Common.CloseCurrentTab();
 
-            //Common.Write(Locators.HTMLTutorialsButtons.inputParagraph, "Tiesiog paragrafas");
+            Common.SwitchToWindowByHandle(handles.First());
+        }
 
+        public static void TestYourselfWithExercises()
+        {
+            Common.Click(Locators.HTMLTutorialsButtons.startTheExerciseButton);
 
-
-
-
-            //Common.SendKeys(Locators.HTMLTutorialsButtons.inputHeading, "Pavadinimas");
-            //    Common.SendKeys(Locators.HTMLTutorialsButtons.inputParagraph, "Paragrafas");
-            //    Common.Click(Locators.HTMLTutorialsButtons.inputRunButton);
-            //    Common.GetElementText(Locators.HTMLTutorialsButtons.inputHeading);
-            //    Common.GetElementText(Locators.HTMLTutorialsButtons.inputParagraph);
-
-            //    Common.SwitchToWindowByHandle(handles.First());            
+            List<string> handles = Common.GetWindowHandles();
+            Common.SwitchToWindowByHandle(handles.Last());
+            Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.inputExercise);
+            Common.SendKeys(Locators.HTMLTutorialsButtons.inputExercise, "title");
+            Common.Click(Locators.HTMLTutorialsButtons.submitAnswerButton);
+        }
+        public static string GetExerciseAnswer()
+        {
+            return Common.GetElementText(Locators.HTMLTutorialsButtons.answerCorrect);
         }
     }
 }

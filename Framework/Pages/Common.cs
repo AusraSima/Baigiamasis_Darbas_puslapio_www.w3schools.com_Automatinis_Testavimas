@@ -1,12 +1,6 @@
-﻿using OpenQA.Selenium.Support.Extensions;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using System;
-using static System.Net.Mime.MediaTypeNames;
-using System.IO;
-using SeleniumExtras.WaitHelpers;
-using OpenQA.Selenium.Chrome;
-using Framework.Pages.w3schools;
 using System.Linq;
 using System.Collections.Generic;
 using OpenQA.Selenium.Interactions;
@@ -50,7 +44,7 @@ namespace Framework.Pages
 
         internal static void JustWait()
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(5));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
         }
         
         internal static void SendKeys(string locator, string keys)
@@ -69,6 +63,8 @@ namespace Framework.Pages
             Driver.GetDriver().SwitchTo().Frame(element);
         }
 
+        
+
         internal static void SwitchToDefaultContent()
         {
             Driver.GetDriver().SwitchTo().DefaultContent();
@@ -84,93 +80,63 @@ namespace Framework.Pages
             Driver.GetDriver().SwitchTo().Window(handle);
         }
 
-        internal static void Write1(string locator, string text)
-        {            
+        internal static void PressKeyMultipleTimes(Actions actions, string key, int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                actions.SendKeys(key);
+            }
+        }
+
+        internal static void WriteHeading(string locator, string text)
+        {
             IWebElement textbox = GetElement(locator);
             Actions actions = new Actions(Driver.GetDriver());
-            actions.Click(textbox);            
+            actions.Click(textbox);
+
             actions.SendKeys(Keys.PageUp);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
+
+            PressKeyMultipleTimes(actions, Keys.ArrowDown, 7);
+
             actions.SendKeys(Keys.End);
             actions.SendKeys(Keys.Control);
-            actions.SendKeys(Keys.ArrowLeft);
-            actions.SendKeys(Keys.ArrowLeft);
-            actions.SendKeys(Keys.ArrowLeft);
-            actions.SendKeys(Keys.ArrowLeft);
-            actions.SendKeys(Keys.ArrowLeft);
+
+            PressKeyMultipleTimes(actions, Keys.ArrowLeft, 5);
+
             actions.KeyUp(Keys.Control);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace); // tiek daug backspace, nes kitaip tinkamai neveike
+
+            PressKeyMultipleTimes(actions, Keys.Backspace, 17);
+
             actions.KeyUp(Keys.Shift);
             actions.SendKeys(text);
             actions.Perform();
         }
 
-        internal static void Write2(string locator, string text)
+
+        internal static void WriteParagraph(string locator, string text)
         {
             IWebElement textbox = GetElement(locator);
             Actions actions = new Actions(Driver.GetDriver());
             actions.Click(textbox);
             actions.SendKeys(Keys.PageUp);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
-            actions.SendKeys(Keys.ArrowDown);
+            PressKeyMultipleTimes(actions, Keys.ArrowDown, 8);
+                        
             actions.SendKeys(Keys.End);
             actions.SendKeys(Keys.Control);
-            actions.SendKeys(Keys.ArrowLeft);
-            actions.SendKeys(Keys.ArrowLeft);
-            actions.SendKeys(Keys.ArrowLeft);
-            actions.SendKeys(Keys.ArrowLeft);
-            actions.SendKeys(Keys.ArrowLeft);
+
+            PressKeyMultipleTimes(actions, Keys.ArrowLeft, 4);
+                                    
             actions.KeyUp(Keys.Control);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
-            actions.SendKeys(Keys.Backspace);
+
+            PressKeyMultipleTimes(actions, Keys.Backspace, 20);
+                        
             actions.KeyUp(Keys.Shift);
             actions.SendKeys(text);
             actions.Perform();
+        }
+        internal static void CloseCurrentTab()
+        {
+            Driver.GetDriver().Close();
         }
     }    
 }

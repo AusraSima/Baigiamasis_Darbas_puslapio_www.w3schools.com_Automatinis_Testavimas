@@ -1,17 +1,15 @@
 ﻿using NUnit.Framework;
 using Framework.Pages.w3schools;
-using Framework;
-using NUnit.Framework.Interfaces;
+using Tests.BaseTests;
 
 namespace Tests.w3schoolsTests
 {
-    internal class w3schoolsHomepage
+    internal class w3schoolsHomepage : BaseTests
     {
         [SetUp]
 
-        public void SetUp()
+        public void Open()
         {
-            Driver.InitializeDriver();
             Homepage.Open();
         
             Homepage.AcceptCookies();
@@ -88,7 +86,7 @@ namespace Tests.w3schoolsTests
             string expectedSeachButton = "";
             string actualSearchButton = Homepage.GetSearchButtonText();
             Assert.AreEqual(expectedSeachButton, actualSearchButton);
-            //Homepage.GetSearchField();
+            Homepage.GetSearchField();
 
             string expectedSearchOurTutorials = "";
             string actualSearchOurTutorials = Homepage.ClickSearchOurTutorialsLink();
@@ -101,16 +99,6 @@ namespace Tests.w3schoolsTests
             Assert.AreEqual(expectedNotSureLink, actualNotSureLink);
 
             Homepage.CodeGame();
-        }
-
-        public void TearDown()
-        {
-            //if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            //{
-            //    string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-            //    TestContext.AddTestAttachment(screenshotFilePath);
-            //}
-            //Driver.ShutDownDriver();
-        }
+        }        
     }
 }

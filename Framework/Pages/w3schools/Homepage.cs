@@ -1,9 +1,5 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace Framework.Pages.w3schools
 {
@@ -112,15 +108,15 @@ namespace Framework.Pages.w3schools
             return Common.GetElementText(Locators.HomepageButtons.inputSearch);
         }
 
-        public static string GetSearchField()//Cia patikrinti ir pataisyti
+        public static string GetSearchField()
         {
+            Common.Click(Locators.HomepageButtons.inputSearch);
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputSearchField);
             Common.SendKeys(Locators.HomepageButtons.inputSearchField, "Tutorials");
             Common.Click(Locators.HomepageButtons.inputSearchIcon);
-            Common.SwitchToIframeByLocator(Locators.HomepageButtons.searchdResultField);
             return Common.GetElementText(Locators.HomepageButtons.searchdResultField);
-
         }
-
+                
         public static string ClickSearchOurTutorialsLink()
     {
         Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, "HTML");
@@ -143,24 +139,15 @@ namespace Framework.Pages.w3schools
             Common.Click(Locators.HomepageButtons.inputGoForward);
             Common.Click(Locators.HomepageButtons.inputGoForward);
             Common.Click(Locators.HomepageButtons.inputPlayCode);
+            Common.WaitForElementTextToBeVisible(Locators.HomepageButtons.inputPlayNextLevel, "Play next level");
+            Common.Click(Locators.HomepageButtons.inputPlayNextLevel);
+            Common.Click(Locators.HomepageButtons.inputGoForward);
+            Common.Click(Locators.HomepageButtons.inputGoForward);
+            Common.Click(Locators.HomepageButtons.inputGoForward);
+            Common.Click(Locators.HomepageButtons.inputGoForward);
+            Common.Click(Locators.HomepageButtons.inputPlayCode);
 
             Common.SwitchToWindowByHandle(handles.First());
-        }
-
-
-
-
-
-        
-
-        
-        //public static void ClickSearchButton()
-        //{
-        //    Common.Click(Locators.HomepageButtons.inputSearch);
-        //    Common.GetElementText(Locators.HomepageButtons.inputSearch);
-        //}
-
-
-          
+        }   
     }
 }

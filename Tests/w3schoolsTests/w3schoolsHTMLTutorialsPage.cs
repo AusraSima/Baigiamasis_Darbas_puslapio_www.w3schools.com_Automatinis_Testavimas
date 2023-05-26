@@ -1,22 +1,15 @@
 ﻿using Framework.Pages.w3schools;
-using Framework;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework.Interfaces;
+using Tests.BaseTests;
 
 namespace Tests.w3schoolsTests
 {
-    internal class w3schoolsHTMLTutorialsPage
+    internal class w3schoolsHTMLTutorialsPage : BaseTests
     {
         [SetUp]
 
-        public void SetUp()
+        public void Open()
         {
-            Driver.InitializeDriver();
             HTMLTutorials.Open();
 
             HTMLTutorials.AcceptCookies();
@@ -26,19 +19,14 @@ namespace Tests.w3schoolsTests
 
         public void CheckHTMLTutorials()
         {
+            HTMLTutorials.WatchOurVideoField();
+            HTMLTutorials.Open();
             HTMLTutorials.TryItYourselfField();
-        }
-
-        [TearDown]
-
-        public void TearDown()
-        {
-            //if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            //{
-            //    string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-            //    TestContext.AddTestAttachment(screenshotFilePath);
-            //}
-            //Driver.ShutDownDriver();
+            
+            HTMLTutorials.TestYourselfWithExercises();
+            string expectedExerciseAnswer = "Correct!";
+            string actualExerciseAnswer = HTMLTutorials.GetExerciseAnswer();
+            Assert.AreEqual(expectedExerciseAnswer, actualExerciseAnswer);
         }
     }
 }

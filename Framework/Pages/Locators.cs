@@ -32,7 +32,7 @@ namespace Framework.Pages
             internal static string inputLanguageLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div";
 
             internal static string inputSearch = "//*[@id='nav_search_btn']/i";
-            internal static string inputSearchField = "//*[@id='gsc-i-id1']";
+            internal static string inputSearchField = "(//*[@class= 'gsc-input'])[2]";
             internal static string inputSearchIcon = "//*[@id='learntocode_searchicon']";
             internal static string searchdResultField = "//*[@id='___gcse_0']/div/div/div[1]";
             internal static string resultFieldOff = "//*[@id='___gcse_0']/div/div/div[1]/div[1]";
@@ -44,6 +44,7 @@ namespace Framework.Pages
             internal static string inputPlayGame = "//*[@id='main']/div[15]/div/p/a";
             internal static string inputGoForward = "//*[@id='codeGame-button-forward']";
             internal static string inputPlayCode = "//*[@id='codeGame-button-runsequence']";
+            internal static string inputPlayNextLevel = "//*[@id='codeGame-nextLevel']";
         }
 
         internal static class LogInPageButtons
@@ -57,11 +58,19 @@ namespace Framework.Pages
 
         internal static class HTMLTutorialsButtons
         {
+            internal static string inputVideoButton = "//*[@id='main']/div[3]/a[2]";
+            internal static string playVideoButton = "//*[@id='my-video']/button";
+            internal static string stopVideo = "//*[@id='my-video']/div[5]/button[1]";
+            
+            internal static string backToHTMLTutorials = "//*[@id='pagetop']/a[1]";
             internal static string inputTryItYourself = "//*[@id='main']/div[4]/a";
             internal static string inputTextArea = "//*[@id='textareawrapper']/div/div[6]";
-            internal static string inputHeading = "//*[@id='textareawrapper']/div/div[6]/div[1]/div/div/div/div[5]/pre[8]";
-            internal static string inputParagraph = "//*[@id='textareawrapper']/div/div[6]/div[1]/div/div/div/div[5]/pre[9]/span/span[4]";
             internal static string inputRunButton = "//*[@id='runbtn']";
+
+            internal static string startTheExerciseButton = "//*[@id='w3-exerciseform']/div/p[2]/a";
+            internal static string inputExercise = "//*[@id='assignmentcontainer']/input";
+            internal static string submitAnswerButton = "//*[@id='answerbutton']";
+            internal static string answerCorrect = "//*[@id='assignmentCorrect']/h2";
         }
     }
 }
