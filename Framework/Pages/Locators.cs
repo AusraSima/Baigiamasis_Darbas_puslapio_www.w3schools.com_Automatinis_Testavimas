@@ -14,12 +14,14 @@ namespace Framework.Pages
             internal static string inputReferences = "//*[@id='navbtn_references']";
             internal static string inputExercises = "//*[@id='navbtn_exercises']";
             internal static string inputBootcamps = "/html/body/div[3]/a[5]";
-            internal static string inputVideos = "/html/body/div[3]/a[6]";
+            internal static string inputVideos = "/html/body/div[3]/a[6]"; 
             internal static string inputUpgrade = "/html/body/div[3]/div[2]/a[5]";
             internal static string inputGetCertified = "//*[@id='cert_navbtn']";
+            internal static string outputGetCertified = "//*[@id='site-header-nav']/nav/ul/li[1]/a";
             internal static string inputCreateWebsite = "/html/body/div[3]/div[2]/a[3]";
             internal static string inputSignUp = "//*[@id='signupbtn_topnav']";
             internal static string inputLogIn = "//*[@id='w3loginbtn']";
+            internal static string inputClose = "//*[@id='navigation']/div/div/button";
 
             //Right bar buttons
             internal static string inputDarkFrame = "//*[contains(@id, 'darkmodemenu')]";
@@ -37,7 +39,7 @@ namespace Framework.Pages
             internal static string searchdResultField = "//*[@id='___gcse_0']/div/div/div[1]";
             internal static string resultFieldOff = "//*[@id='___gcse_0']/div/div/div[1]/div[1]";
 
-            //Kiti
+            //Other Homepage buttons and links
             internal static string inputSearchOurTutorialsLink = "//*[@id='search2']";
             internal static string inputNotSureLink = "//*[@id='main']/div[2]/div/h4/a";
 
@@ -54,10 +56,17 @@ namespace Framework.Pages
             internal static string inputLogInButton = "//*[@id='root']/div/div/div[4]/div[1]/div/div[4]/div[1]/button";
             internal static string inputLogOutButton = "//*[@id='navigation']/div[2]/div";
             internal static string inputHomeButton = "//*[@id='root']/div/div/div[2]/div/a/svg";
+            internal static string elementToBeVisibleWhenInvalidData = "//*[@id='root']/div/div/div[4]/div[1]/div/div[3]/div";
+            internal static string outputInvalidData = "//div[contains(@class, 'Alert_danger__Wsdhv')]";            
+            internal static string outputPasswordNotEntered = "//*[@id='root']/div/div/div[4]/div[1]/div/div[3]/div";
+            internal static string outputEmailNotEntered = "//*[@id='root']/div/div/div[4]/div[1]/div/div[2]/form/div[1]/span";
+            internal static string outputValidData = "//*[@id='scoreCardMLW3S']/div[1]";
+            internal static string outputLogOutResult = "//*[@id='root']/div/div/div[4]/div[1]/div/div[1]/h1";
         }
 
         internal static class HTMLTutorialsButtons
         {
+            internal static string videoTutorialsPage = "/html/body/div[6]/div[1]/div/h1";
             internal static string inputVideoButton = "//*[@id='main']/div[3]/a[2]";
             internal static string playVideoButton = "//*[@id='my-video']/button";
             internal static string stopVideo = "//*[@id='my-video']/div[5]/button[1]";

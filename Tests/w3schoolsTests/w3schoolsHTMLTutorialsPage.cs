@@ -4,7 +4,7 @@ using Tests.BaseTests;
 
 namespace Tests.w3schoolsTests
 {
-    internal class w3schoolsHTMLTutorialsPage : BaseTests
+    internal class w3schoolsHTMLTutorialsPage : BaseTest
     {
         [SetUp]
 

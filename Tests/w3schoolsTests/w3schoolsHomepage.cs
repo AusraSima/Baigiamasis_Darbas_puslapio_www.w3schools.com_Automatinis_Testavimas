@@ -4,7 +4,7 @@ using Tests.BaseTests;
 
 namespace Tests.w3schoolsTests
 {
-    internal class w3schoolsHomepage : BaseTests
+    internal class w3schoolsHomepage : BaseTest
     {
         [SetUp]
 
@@ -19,49 +19,65 @@ namespace Tests.w3schoolsTests
 
         public void CheckHomepage()
         {
-            string expectedLogo = "";
-            string actualLogo = Homepage.GetLogoButtonText();
-            Assert.AreEqual(expectedLogo, actualLogo);
-
             string expectedTutorials = "Tutorials";
             string actualTutorials = Homepage.GetTutorialsButtonText();
             Assert.AreEqual(expectedTutorials, actualTutorials);
+            Homepage.ClickTutorialsButton();
 
             string expectedReferences = "References";
             string actualReferences = Homepage.GetReferencesButtonText();
             Assert.AreEqual(expectedReferences, actualReferences);
+            Homepage.ClickReferencesButton();
 
             string expectedExercises = "Exercises";
             string actualExercises = Homepage.GetExercisesButtonText();
             Assert.AreEqual(expectedExercises, actualExercises);
+            Homepage.ClickExercisesButton();
 
             string expectedBootcamps = "Bootcamps";
             string actualBootcamps = Homepage.GetBootcampsButtonText();
             Assert.AreEqual(expectedBootcamps, actualBootcamps);
+            Homepage.ClickBootcampsButton();
+
+            Homepage.Open();
 
             string expectedVideos = "Videos";
             string actualVideos = Homepage.GetVideosButtonText();
             Assert.AreEqual(expectedVideos, actualVideos);
+            Homepage.ClickVideosButton();
+
+            Homepage.Open();
 
             string expectedUpgrade = "Upgrade";
             string actualUpgrade = Homepage.GetUpgradeButtonText();
             Assert.AreEqual(expectedUpgrade, actualUpgrade);
+            Homepage.ClickUpgradeButton();
+
+            Homepage.Open();
 
             string expectedGetCertified = "Get Certified";
             string actualGetCertified = Homepage.GetGetCertifiedButtonText();
             Assert.AreEqual(expectedGetCertified, actualGetCertified);
+            Homepage.ClickGetCertifiedButton();
 
             string expectedCreateWebsite = "Create Website";
             string actualCreateWebsite = Homepage.GetCreateWebsiteButtonText();
             Assert.AreEqual(expectedCreateWebsite, actualCreateWebsite);
+            Homepage.ClickCreateWebsiteButton();
+
+            Homepage.Open();
 
             string expectedSignUp = "Sign Up";
             string actualSignUp = Homepage.GetSignUpButtonText();
             Assert.AreEqual(expectedSignUp, actualSignUp);
+            Homepage.ClickSignUpButton();
+
+            Homepage.Open();
 
             string expectedLogIn = "Log in";
             string actualLogIn = Homepage.GetLogInButtonText();
             Assert.AreEqual(expectedLogIn, actualLogIn);
+            Homepage.ClickLogInButton();
 
             string expectedDarkMenu = "Dark mode\r\nDark code";
             string actualDarkMenu = Homepage.GetDarkMenuButtonText();
@@ -81,7 +97,7 @@ namespace Tests.w3schoolsTests
             string actualLanguageFrame = Homepage.GetLanguages();
             Assert.AreEqual(expectedLanguageFrame, actualLanguageFrame);
 
-            Homepage.Open(); 
+            Homepage.Open();
 
             string expectedSeachButton = "";
             string actualSearchButton = Homepage.GetSearchButtonText();

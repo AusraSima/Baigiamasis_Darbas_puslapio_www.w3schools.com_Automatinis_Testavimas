@@ -8,28 +8,33 @@ namespace Framework.Pages.w3schools
         public static void Open()
         {
             Driver.OpenPage("https://www.w3schools.com/");
-        }               
-        
+        }
+
         public static void AcceptCookies()
         {
             string buttonAcceptCookies = "//*[@id='accept-choices']";
             Common.Click(buttonAcceptCookies);
             Common.WaitForElementToNotContainText(buttonAcceptCookies, "Accept all &; visit the site");
         }
-
-        public static string GetLogoButtonText()
-        {
-            return Common.GetElementText(Locators.HomepageButtons.inputHome);
-        }
-
+        
         public static string GetTutorialsButtonText()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputTutorials);
         }
-        
+
+        public static void ClickTutorialsButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputTutorials);
+        }
+
         public static string GetReferencesButtonText()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputReferences);
+        }
+
+        public static void ClickReferencesButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputReferences);
         }
 
         public static string GetExercisesButtonText()
@@ -37,14 +42,31 @@ namespace Framework.Pages.w3schools
             return Common.GetElementText(Locators.HomepageButtons.inputExercises);
         }
 
+        public static void ClickExercisesButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputExercises);
+        }
+
+
         public static string GetBootcampsButtonText()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputBootcamps);
         }
-        
+
+        public static void ClickBootcampsButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputBootcamps);
+        }
+
         public static string GetVideosButtonText()
         {
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputVideos);
             return Common.GetElementText(Locators.HomepageButtons.inputVideos);
+        }
+
+        public static void ClickVideosButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputVideos);
         }
 
         public static string GetUpgradeButtonText()
@@ -52,9 +74,25 @@ namespace Framework.Pages.w3schools
             return Common.GetElementText(Locators.HomepageButtons.inputUpgrade);
         }
 
+        public static void ClickUpgradeButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputUpgrade);
+        }
+
         public static string GetGetCertifiedButtonText()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputGetCertified);
+        }
+
+        public static void ClickGetCertifiedButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputGetCertified);
+
+            List<string> handles = Common.GetWindowHandles();
+            Common.SwitchToWindowByHandle(handles.Last());
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.outputGetCertified);
+            
+            Common.SwitchToWindowByHandle(handles.First());
         }
 
         public static string GetCreateWebsiteButtonText()
@@ -62,9 +100,19 @@ namespace Framework.Pages.w3schools
             return Common.GetElementText(Locators.HomepageButtons.inputCreateWebsite);
         }
 
+        public static void ClickCreateWebsiteButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputCreateWebsite);
+        }
+
         public static string GetSignUpButtonText()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputSignUp);
+        }
+
+        public static void ClickSignUpButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputSignUp);
         }
 
         public static string GetLogInButtonText()
@@ -72,13 +120,22 @@ namespace Framework.Pages.w3schools
             return Common.GetElementText(Locators.HomepageButtons.inputLogIn);
         }
 
+        public static void ClickLogInButton()
+        {
+            Common.Click(Locators.HomepageButtons.inputLogIn);
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputClose);
+            Common.Click(Locators.HomepageButtons.inputClose);
+        }
+
         public static string GetDarkMenuButtonText()
         {
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputDarkFrame);
             return Common.GetElementText(Locators.HomepageButtons.inputDarkFrame);
         }
 
         public static string GetDarkModeButtonText()
         {
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputDarkMode);
             return Common.GetElementText(Locators.HomepageButtons.inputDarkMode);
         }
 
@@ -118,13 +175,13 @@ namespace Framework.Pages.w3schools
         }
                 
         public static string ClickSearchOurTutorialsLink()
-    {
-        Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, "HTML");
-        Common.Click(Locators.HomepageButtons.inputSearchOurTutorialsLink);
-        return Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
-    }
+        {
+            Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, "HTML");
+            Common.Click(Locators.HomepageButtons.inputSearchOurTutorialsLink);
+            return Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
+        }
 
-    public static string GetNotSureLink()
+        public static string GetNotSureLink()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputNotSureLink);
         }

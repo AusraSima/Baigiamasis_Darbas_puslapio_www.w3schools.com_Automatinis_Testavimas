@@ -13,12 +13,7 @@ namespace Framework.Pages
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
-
-        internal static IWebElement GetElementByTagName(string name)
-        {
-            return Driver.GetDriver().FindElement(By.TagName(name));
-        }
-
+        
         internal static void Click(string locator)
         {
             GetElement(locator).Click();
@@ -41,12 +36,7 @@ namespace Framework.Pages
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
             wait.Until(driver => driver.FindElement(By.XPath(locator)).Displayed);
         }
-
-        internal static void JustWait()
-        {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
-        }
-        
+                
         internal static void SendKeys(string locator, string keys)
         {
             GetElement(locator).SendKeys(keys);
@@ -61,13 +51,6 @@ namespace Framework.Pages
         {
             IWebElement element = GetElement(locator);
             Driver.GetDriver().SwitchTo().Frame(element);
-        }
-
-        
-
-        internal static void SwitchToDefaultContent()
-        {
-            Driver.GetDriver().SwitchTo().DefaultContent();
         }
 
         internal static List<string> GetWindowHandles()
@@ -112,7 +95,6 @@ namespace Framework.Pages
             actions.Perform();
         }
 
-
         internal static void WriteParagraph(string locator, string text)
         {
             IWebElement textbox = GetElement(locator);
@@ -134,6 +116,7 @@ namespace Framework.Pages
             actions.SendKeys(text);
             actions.Perform();
         }
+
         internal static void CloseCurrentTab()
         {
             Driver.GetDriver().Close();

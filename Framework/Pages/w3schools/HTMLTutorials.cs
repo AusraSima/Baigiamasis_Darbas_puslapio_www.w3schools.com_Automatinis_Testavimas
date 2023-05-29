@@ -20,7 +20,7 @@ namespace Framework.Pages.w3schools
         {
             Common.Click(Locators.HTMLTutorialsButtons.inputVideoButton);
             Common.Click(Locators.HTMLTutorialsButtons.playVideoButton);
-            Common.JustWait();            
+            Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.videoTutorialsPage);            
         }
 
         public static void TryItYourselfField()
@@ -54,6 +54,6 @@ namespace Framework.Pages.w3schools
         public static string GetExerciseAnswer()
         {
             return Common.GetElementText(Locators.HTMLTutorialsButtons.answerCorrect);
-        }
+        }        
     }
 }
