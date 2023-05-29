@@ -1,11 +1,26 @@
 ﻿# Final Work of Automated Testing Course
 ## [tested website www.w3schools.com](https://www.w3schools.com)
 
-Preconditions: The User should have an account
+**Preconditions: The User already has an account for Log In.**
 
-TS - Test scenario
-TC - Test case
+Test Data: 
+<ul>
+<li>Browser: Chrome Version 109.0.5414.141</li>
+<li>Operating System: Windows 8.1</li>
+</ul>
 
+Test Environment:
+<ul>
+<li>Selenium WebDriver version 4.9.0</li>
+</ul>
+
+Abbreviations:
+<ul>
+<li>TS - Test scenario</li>
+<li>TC - Test case</li>
+</ul>
+
+###Test steps
 <ul>
 <li>TS01. Verification of Homepage
 	<ul>
