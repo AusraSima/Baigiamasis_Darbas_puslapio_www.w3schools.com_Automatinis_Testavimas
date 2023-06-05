@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium.DevTools.V110.Input;
-using static Framework.Pages.Locators;
-
-namespace Framework.Pages
+﻿namespace Framework.Pages
 {
     internal static class Locators
     {

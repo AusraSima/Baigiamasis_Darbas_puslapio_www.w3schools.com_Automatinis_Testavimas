@@ -47,7 +47,6 @@ namespace Framework.Pages.w3schools
             Common.Click(Locators.HomepageButtons.inputExercises);
         }
 
-
         public static string GetBootcampsButtonText()
         {
             return Common.GetElementText(Locators.HomepageButtons.inputBootcamps);
@@ -159,7 +158,6 @@ namespace Framework.Pages.w3schools
 
             return Common.GetElementText(Locators.HomepageButtons.inputLanguageLietuviu);
         }
-
 
         public static void ClickMenuSearchButton()
         {
