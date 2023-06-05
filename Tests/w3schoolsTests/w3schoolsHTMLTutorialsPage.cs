@@ -10,7 +10,7 @@ namespace Tests.w3schoolsTests
         public void Open()
         {
             HTMLTutorials.Open();
-            HTMLTutorials.AcceptCookies();
+            Homepage.AcceptCookies();
         }
 
         [Test]

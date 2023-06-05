@@ -9,12 +9,6 @@ namespace Framework.Pages.w3schools
         {
             Driver.OpenPage("https://www.w3schools.com/html/default.asp");
         }
-        public static void AcceptCookies()
-        {
-            string buttonAcceptCookies = "//*[@id='accept-choices']";
-            Common.Click(buttonAcceptCookies);
-            Common.WaitForElementToNotContainText(buttonAcceptCookies, "Accept all &; visit the site");
-        }
 
         public static void WatchOurVideoField()
         {
