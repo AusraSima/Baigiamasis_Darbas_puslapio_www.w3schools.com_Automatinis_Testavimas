@@ -159,18 +159,27 @@ namespace Framework.Pages.w3schools
 
             return Common.GetElementText(Locators.HomepageButtons.inputLanguageLietuviu);
         }
-       
-        public static string GetSearchButtonText()
+
+
+        public static void ClickMenuSearchButton()
         {
-            return Common.GetElementText(Locators.HomepageButtons.inputSearch);
+            Common.Click(Locators.HomepageButtons.inputSearch);
+        }
+
+        public static void EnterSearchPhrase(string phrase)
+        {
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputSearchField);
+            Common.SendKeys(Locators.HomepageButtons.inputSearchField, phrase);
+        }
+
+        public static void ClickButtonToSearchForPhrase()
+        {
+            Common.Click(Locators.HomepageButtons.inputSearchIcon);
         }
 
         public static string GetSearchField()
         {
-            Common.Click(Locators.HomepageButtons.inputSearch);
-            Common.WaitForElementToBeVisible(Locators.HomepageButtons.inputSearchField);
-            Common.SendKeys(Locators.HomepageButtons.inputSearchField, "Tutorials");
-            Common.Click(Locators.HomepageButtons.inputSearchIcon);
+            Common.WaitForElementToBeVisible("//*[contains(@class,'gsc-results-wrapper-visible')]");
             return Common.GetElementText(Locators.HomepageButtons.searchdResultField);
         }
                 

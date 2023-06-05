@@ -168,10 +168,14 @@ namespace Tests.w3schoolsTests
         [Test]
         public void MenuSearch()
         {
-            string expectedSeachButton = "";
-            string actualSearchButton = Homepage.GetSearchButtonText();
-            Assert.AreEqual(expectedSeachButton, actualSearchButton);
-            Homepage.GetSearchField();
+            string expectedText = "Tutorials";
+
+            Homepage.ClickMenuSearchButton();
+            Homepage.EnterSearchPhrase(expectedText);
+            Homepage.ClickButtonToSearchForPhrase();
+            string result = Homepage.GetSearchField();
+
+            StringAssert.Contains(expectedText, result);
         }
 
         [Test]
