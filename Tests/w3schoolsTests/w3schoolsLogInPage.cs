@@ -8,14 +8,12 @@ namespace Tests.w3schoolsTests
 
     {
         [SetUp]
-
         public void Open()
         {
             LogInVerification.Open();
         }
 
         [Test]
-
         public void CheckLogIn()
         {
             LogInVerification.RegistrationWithInvalidData();

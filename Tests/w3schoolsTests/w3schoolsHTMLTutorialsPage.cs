@@ -7,16 +7,13 @@ namespace Tests.w3schoolsTests
     internal class w3schoolsHTMLTutorialsPage : BaseTest
     {
         [SetUp]
-
         public void Open()
         {
             HTMLTutorials.Open();
-
             HTMLTutorials.AcceptCookies();
         }
 
         [Test]
-
         public void CheckHTMLTutorials()
         {
             HTMLTutorials.WatchOurVideoField();

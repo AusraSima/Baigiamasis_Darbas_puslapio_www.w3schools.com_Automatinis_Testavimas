@@ -7,16 +7,13 @@ namespace Tests.w3schoolsTests
     internal class w3schoolsHomepage : BaseTest
     {
         [SetUp]
-
         public void Open()
         {
             Homepage.Open();
-        
             Homepage.AcceptCookies();
         }
 
         [Test]
-
         public void CheckHomepage()
         {
             string expectedTutorials = "Tutorials";
