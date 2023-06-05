@@ -7,50 +7,50 @@
             Driver.OpenPage("https://profile.w3schools.com/");
         }
 
-        public static void RegistrationWithInvalidData()
+        public static void LoginWithInvalidData()
         {
             Common.SendKeys(Locators.LogInPageButtons.inputEmailAddress, "rob@handleride.com");
             Common.SendKeys(Locators.LogInPageButtons.inputPassword, "159AbCd");
             Common.Click(Locators.LogInPageButtons.inputLogInButton);
         }
 
-        public static string RegistrationWithInvalidDataResult()
+        public static string LoginWithInvalidDataResult()
         {
             Common.WaitForElementToBeVisible(Locators.LogInPageButtons.elementToBeVisibleWhenInvalidData);
             return Common.GetElementText(Locators.LogInPageButtons.outputInvalidData);
         }
 
-        public static void RegistrationWithoutPassword()
+        public static void LoginWithoutPassword()
         {
             Common.SendKeys(Locators.LogInPageButtons.inputEmailAddress, "avasims@handleride.com");
             Common.Click(Locators.LogInPageButtons.inputLogInButton);
         }
 
-        public static string RegistrationWithoutPasswordResult()
+        public static string LoginWithoutPasswordResult()
         {
             Common.WaitForElementToBeVisible(Locators.LogInPageButtons.elementToBeVisibleWhenInvalidData);
             return Common.GetElementText(Locators.LogInPageButtons.outputPasswordNotEntered);
         }
 
-        public static void RegistrationWithoutEmail()
+        public static void LoginWithoutEmail()
         {
             Common.SendKeys(Locators.LogInPageButtons.inputPassword, "QijHRYEc15#");
             Common.Click(Locators.LogInPageButtons.inputLogInButton);
         }
         
-        public static string RegistrationWithoutEmailResult()
+        public static string LoginWithoutEmailResult()
         {
             return Common.GetElementText(Locators.LogInPageButtons.outputEmailNotEntered);
         }      
 
-        public static void RegistrationWithValidData()
+        public static void LoginWithValidData()
         {
             Common.SendKeys(Locators.LogInPageButtons.inputEmailAddress, "avasims@handleride.com");
             Common.SendKeys(Locators.LogInPageButtons.inputPassword, "QijHRYEc15#");
             Common.Click(Locators.LogInPageButtons.inputLogInButton);
         }
 
-        public static string RegistrationWithValidDataResult()
+        public static string LoginWithValidDataResult()
         {
             Common.WaitForElementToBeVisible(Locators.LogInPageButtons.outputValidData);
             return Common.GetElementText(Locators.LogInPageButtons.outputValidData);
