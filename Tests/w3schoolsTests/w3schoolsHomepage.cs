@@ -25,7 +25,10 @@ namespace Tests.w3schoolsTests
             string expectedTutorials = "Tutorials";
             string actualTutorials = Homepage.GetTutorialsButtonText();
             Assert.AreEqual(expectedTutorials, actualTutorials);
-            Homepage.ClickTutorialsButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickTutorialsButton();
         }
 
         [Test]
@@ -34,7 +37,10 @@ namespace Tests.w3schoolsTests
             string expectedReferences = "References";
             string actualReferences = Homepage.GetReferencesButtonText();
             Assert.AreEqual(expectedReferences, actualReferences);
-            Homepage.ClickReferencesButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickReferencesButton();
         }
 
         [Test]
@@ -43,7 +49,10 @@ namespace Tests.w3schoolsTests
             string expectedExercises = "Exercises";
             string actualExercises = Homepage.GetExercisesButtonText();
             Assert.AreEqual(expectedExercises, actualExercises);
-            Homepage.ClickExercisesButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickExercisesButton();
         }
 
         [Test]
@@ -52,7 +61,10 @@ namespace Tests.w3schoolsTests
             string expectedBootcamps = "Bootcamps";
             string actualBootcamps = Homepage.GetBootcampsButtonText();
             Assert.AreEqual(expectedBootcamps, actualBootcamps);
-            Homepage.ClickBootcampsButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickBootcampsButton();
         }
 
         [Test]
@@ -61,7 +73,10 @@ namespace Tests.w3schoolsTests
             string expectedVideos = "Videos";
             string actualVideos = Homepage.GetVideosButtonText();
             Assert.AreEqual(expectedVideos, actualVideos);
-            Homepage.ClickVideosButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickVideosButton();
         }
 
         [Test]
@@ -70,7 +85,10 @@ namespace Tests.w3schoolsTests
             string expectedUpgrade = "Upgrade";
             string actualUpgrade = Homepage.GetUpgradeButtonText();
             Assert.AreEqual(expectedUpgrade, actualUpgrade);
-            Homepage.ClickUpgradeButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickUpgradeButton();
         }
 
         [Test]
@@ -79,7 +97,10 @@ namespace Tests.w3schoolsTests
             string expectedGetCertified = "Get Certified";
             string actualGetCertified = Homepage.GetGetCertifiedButtonText();
             Assert.AreEqual(expectedGetCertified, actualGetCertified);
-            Homepage.ClickGetCertifiedButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickGetCertifiedButton();
         }
 
         [Test]
@@ -88,7 +109,10 @@ namespace Tests.w3schoolsTests
             string expectedCreateWebsite = "Create Website";
             string actualCreateWebsite = Homepage.GetCreateWebsiteButtonText();
             Assert.AreEqual(expectedCreateWebsite, actualCreateWebsite);
-            Homepage.ClickCreateWebsiteButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickCreateWebsiteButton();
         }
 
         [Test]
@@ -97,7 +121,10 @@ namespace Tests.w3schoolsTests
             string expectedSignUp = "Sign Up";
             string actualSignUp = Homepage.GetSignUpButtonText();
             Assert.AreEqual(expectedSignUp, actualSignUp);
-            Homepage.ClickSignUpButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickSignUpButton();
         }
 
         [Test]
@@ -106,7 +133,10 @@ namespace Tests.w3schoolsTests
             string expectedLogIn = "Log in";
             string actualLogIn = Homepage.GetLogInButtonText();
             Assert.AreEqual(expectedLogIn, actualLogIn);
-            Homepage.ClickLogInButton();
+
+            // Šis paspaudimas beprasmis kadangi nieko paskui netikrinate
+            // Jei jau darote paspaudimą tai padarykite ir kažkokį patikrinimą
+            //Homepage.ClickLogInButton();
         }
 
         [Test]
