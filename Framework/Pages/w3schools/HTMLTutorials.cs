@@ -9,18 +9,15 @@ namespace Framework.Pages.w3schools
         {
             Driver.OpenPage("https://www.w3schools.com/html/default.asp");
         }
-        public static void AcceptCookies()
-        {
-            string buttonAcceptCookies = "//*[@id='accept-choices']";
-            Common.Click(buttonAcceptCookies);
-            Common.WaitForElementToNotContainText(buttonAcceptCookies, "Accept all &; visit the site");
-        }
 
         public static void WatchOurVideoField()
         {
+            // Ką daro šie paspaudimai ir koks jų tikslas?
             Common.Click(Locators.HTMLTutorialsButtons.inputVideoButton);
             Common.Click(Locators.HTMLTutorialsButtons.playVideoButton);
-            Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.videoTutorialsPage);            
+
+            // Šis palaukimas nieko nedaro
+            //Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.videoTutorialsPage);            
         }
 
         public static void TryItYourselfField()
