@@ -183,11 +183,18 @@ namespace Framework.Pages.w3schools
             return Common.GetElementText(Locators.HomepageButtons.searchdResultField);
         }
                 
-        public static string ClickSearchOurTutorialsLink()
+        public static void EnterSearchPhraseToSearchField(string phrase)
         {
-            Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, "HTML");
-            Common.Click(Locators.HomepageButtons.inputSearchOurTutorialsLink);
-            return Common.GetElementText(Locators.HomepageButtons.inputSearchOurTutorialsLink);
+            Common.SendKeys(Locators.HomepageButtons.inputSearchOurTutorialsLink, phrase);
+        }
+
+        public static void ClickSearchButton()
+        {
+            Common.Click("//*[@id='learntocode_searchbtn']");
+        }
+        public static string GetSearchResultHeading()
+        {
+            return Common.GetElementText("//*[@id='main']/h1");
         }
 
         public static string GetNotSureLink()
@@ -212,6 +219,7 @@ namespace Framework.Pages.w3schools
             Common.Click(Locators.HomepageButtons.inputGoForward);
             Common.Click(Locators.HomepageButtons.inputGoForward);
             Common.Click(Locators.HomepageButtons.inputPlayCode);
+            Common.WaitForElementTextToBeVisible(Locators.HomepageButtons.inputPlayNextLevel, "Play next level");
 
             Common.SwitchToWindowByHandle(handles.First());
         }   

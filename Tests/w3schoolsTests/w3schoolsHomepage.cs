@@ -180,9 +180,13 @@ namespace Tests.w3schoolsTests
         [Test]
         public void FieldSearch()
         {
-            string expectedSearchOurTutorials = "";
-            string actualSearchOurTutorials = Homepage.ClickSearchOurTutorialsLink();
-            Assert.AreEqual(expectedSearchOurTutorials, actualSearchOurTutorials);
+            string expectedResult = "HTML Tutorial";
+
+            Homepage.EnterSearchPhraseToSearchField("html");
+            Homepage.ClickSearchButton();
+            string actualResult = Homepage.GetSearchResultHeading();
+
+            Assert.AreEqual(expectedResult, actualResult);
         }
 
         [Test]
