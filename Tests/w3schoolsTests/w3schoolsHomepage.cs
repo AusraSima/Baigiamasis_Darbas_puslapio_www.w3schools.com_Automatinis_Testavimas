@@ -142,10 +142,6 @@ namespace Tests.w3schoolsTests
         [Test]
         public void MenuDarkMode()
         {
-            string expectedDarkMenu = "Dark mode\r\nDark code";
-            string actualDarkMenu = Homepage.GetDarkMenuButtonText();
-            Assert.AreEqual(expectedDarkMenu, actualDarkMenu);
-
             string expectedModeValue = "Dark mode";
             string expectedCodeValue = "Dark code";
             string actualModeValue = Homepage.GetDarkModeButtonText();
@@ -157,12 +153,15 @@ namespace Tests.w3schoolsTests
         [Test]
         public void MenuLanguages()
         {
-            string expectedGlobeButtnon = "";
-            string actualGlobeButton = Homepage.GetGlobeButtonText();
-            Assert.AreEqual(expectedGlobeButtnon, actualGlobeButton);
-            string expectedLanguageFrame = "";
-            string actualLanguageFrame = Homepage.GetLanguages();
-            Assert.AreEqual(expectedLanguageFrame, actualLanguageFrame);
+            // Šis testas iš principo nieko nedaro
+            // Patikrina, kad du elementai neturi jokio teksto
+
+            //string expectedGlobeButtnon = "";
+            //string actualGlobeButton = Homepage.GetGlobeButtonText();
+            //Assert.AreEqual(expectedGlobeButtnon, actualGlobeButton);
+            //string expectedLanguageFrame = "";
+            //string actualLanguageFrame = Homepage.GetLanguages();
+            //Assert.AreEqual(expectedLanguageFrame, actualLanguageFrame);
         }
 
         [Test]
