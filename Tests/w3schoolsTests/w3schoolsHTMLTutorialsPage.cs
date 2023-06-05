@@ -13,13 +13,17 @@ namespace Tests.w3schoolsTests
             Homepage.AcceptCookies();
         }
 
+        // Šį testą reikėtų suskaidyti į tris atskirus testus
         [Test]
         public void CheckHTMLTutorials()
         {
             HTMLTutorials.WatchOurVideoField();
             HTMLTutorials.Open();
+
+            // Šis metodas turėtų būti kaip atskiras testas
             HTMLTutorials.TryItYourselfField();
             
+            // Ši dalis taip pat turėtų būti kaip atskiras testas
             HTMLTutorials.TestYourselfWithExercises();
             string expectedExerciseAnswer = "Correct!";
             string actualExerciseAnswer = HTMLTutorials.GetExerciseAnswer();

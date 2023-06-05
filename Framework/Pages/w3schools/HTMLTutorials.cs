@@ -12,9 +12,12 @@ namespace Framework.Pages.w3schools
 
         public static void WatchOurVideoField()
         {
+            // Ką daro šie paspaudimai ir koks jų tikslas?
             Common.Click(Locators.HTMLTutorialsButtons.inputVideoButton);
             Common.Click(Locators.HTMLTutorialsButtons.playVideoButton);
-            Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.videoTutorialsPage);            
+
+            // Šis palaukimas nieko nedaro
+            //Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.videoTutorialsPage);            
         }
 
         public static void TryItYourselfField()
