@@ -1,5 +1,4 @@
-﻿using Framework.Pages.w3schools;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
@@ -12,7 +11,8 @@ namespace Framework
 
         public static void InitializeDriver()
         {
-            driver = new ChromeDriver(); 
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
         }
         
         internal static IWebDriver GetDriver() 
@@ -23,13 +23,7 @@ namespace Framework
         internal static void OpenPage(string url)
         {
             driver.Url = url;
-            driver.Manage().Window.Maximize();
         }        
-        
-        public static void ClosePage()
-        {
-            driver.SwitchTo().Window(driver.WindowHandles[0]);
-        }
         
         public static void ShutDownDriver() 
         {
