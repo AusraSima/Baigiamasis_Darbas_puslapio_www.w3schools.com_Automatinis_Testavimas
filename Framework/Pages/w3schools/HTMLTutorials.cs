@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using OpenQA.Selenium.Support.Extensions;
+using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Framework.Pages.w3schools
@@ -10,15 +13,31 @@ namespace Framework.Pages.w3schools
             Driver.OpenPage("https://www.w3schools.com/html/default.asp");
         }
 
-        public static void WatchOurVideoField()
+        public static string GetWatchOurVideoButtonText()
         {
             // Ką daro šie paspaudimai ir koks jų tikslas?
-            Common.Click(Locators.HTMLTutorialsButtons.inputVideoButton);
-            Common.Click(Locators.HTMLTutorialsButtons.playVideoButton);
+           
+
+            return Common.GetElementText(Locators.HTMLTutorialsButtons.inputVideoButton);
+            
+
+            
+
 
             // Šis palaukimas nieko nedaro
             //Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.videoTutorialsPage);            
         }
+
+        public static void GoToVideoPage()
+        {
+            Common.Click(Locators.HTMLTutorialsButtons.inputVideoButton);
+        }
+
+        public static string GetPlayVideoButtonText()
+        {
+            return Common.GetElementText(Locators.HTMLTutorialsButtons.playVideoButton);
+        }
+        
 
         public static void TryItYourselfField()
         {

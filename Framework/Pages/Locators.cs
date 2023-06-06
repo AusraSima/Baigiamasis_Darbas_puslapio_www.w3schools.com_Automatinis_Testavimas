@@ -1,24 +1,32 @@
-﻿namespace Framework.Pages
+﻿using System.Runtime.Serialization.Formatters;
+
+namespace Framework.Pages
 {
     internal static class Locators
     {
         internal static class HomepageButtons
         {
-            //Menu buttons
-            internal static string inputHome = "/html/body/div[3]/a[1]";
-            internal static string backToHomepage = "/html/body/div[4]/a[1]";
+            //Menu 
             internal static string inputTutorials = "//*[@id='navbtn_tutorials']";
+            internal static string outputTutorials = "//*[@id='nav_tutorials']/div/div/div[2]/h3";            
             internal static string inputReferences = "//*[@id='navbtn_references']";
+            internal static string ouputReferences = "//*[@id='nav_references']/div/div/div[2]/a[1]";            
             internal static string inputExercises = "//*[@id='navbtn_exercises']";
+            internal static string outputExercises = "//*[@id='nav_exercises']/div/div/div[2]/a[1]";
             internal static string inputBootcamps = "/html/body/div[3]/a[5]";
-            internal static string inputVideos = "/html/body/div[3]/a[6]"; 
+            internal static string outputBootcamps = "//*[@id='header-title']";
+            internal static string inputVideos = "/html/body/div[3]/a[6]";
+            internal static string outputVideos = "/html/body/div[6]/div[1]/div/h1";
             internal static string inputUpgrade = "/html/body/div[3]/div[2]/a[5]";
+            internal static string outputUpgrade = "/html/body/div[6]/div[1]/h3";
             internal static string inputGetCertified = "//*[@id='cert_navbtn']";
-            internal static string outputGetCertified = "//*[@id='site-header-nav']/nav/ul/li[1]/a";
+            internal static string outputGetCertified = "//*[@id='site-header-nav']/nav/ul/li[1]";           
             internal static string inputCreateWebsite = "/html/body/div[3]/div[2]/a[3]";
+            internal static string outputCreateWebsite = "/html/body/div[6]/div/div[1]/div/h1";
             internal static string inputSignUp = "//*[@id='signupbtn_topnav']";
+            internal static string outputSignUp = "/html/body/div[6]/div[1]/div/div[1]/div/h1/span";
             internal static string inputLogIn = "//*[@id='w3loginbtn']";
-            internal static string inputClose = "//*[@id='navigation']/div/div/button";
+            internal static string outputLogIn = "//*[@id='root']/div/div/div[4]/div[1]/div/div[1]/h1";
 
             //Right bar buttons
             internal static string inputDarkFrame = "//*[contains(@id, 'darkmodemenu')]";
@@ -29,15 +37,18 @@
             internal static string inputLanguageButton = "//*[@id=':0.targetLanguage']";
             internal static string inputIframe = "//*[@title='Kalbos Vertėjo valdiklis']";
             internal static string inputLanguageLietuviu = "//*[@id=':1.menuBody']/table/tbody/tr/td[1]/a[2]/div";
+            internal static string outputLanguageLietuviu = "//*[@id='main']/div[2]/div/h1/font/font";
 
             internal static string inputSearch = "//*[@id='nav_search_btn']/i";
             internal static string inputSearchField = "(//*[@class= 'gsc-input'])[2]";
             internal static string inputSearchIcon = "//*[@id='learntocode_searchicon']";
+            internal static string visibleSearchField = "//*[contains(@class,'gsc-results-wrapper-visible')]";
             internal static string searchdResultField = "//*[@id='___gcse_0']/div/div/div[1]";
-            internal static string resultFieldOff = "//*[@id='___gcse_0']/div/div/div[1]/div[1]";
 
             //Other Homepage buttons and links
             internal static string inputSearchOurTutorialsLink = "//*[@id='search2']";
+            internal static string inputSearchButton = "//*[@id='learntocode_searchbtn']";
+            internal static string inputSearchResultHeading = "//*[@id='main']/h1";
             internal static string inputNotSureLink = "//*[@id='main']/div[2]/div/h4/a";
 
             internal static string inputPlayGame = "//*[@id='main']/div[15]/div/p/a";

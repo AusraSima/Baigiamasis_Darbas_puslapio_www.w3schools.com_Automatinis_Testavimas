@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using OpenQA.Selenium.Interactions;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Framework.Pages
 {
@@ -51,6 +52,11 @@ namespace Framework.Pages
         {
             IWebElement element = GetElement(locator);
             Driver.GetDriver().SwitchTo().Frame(element);
+        }
+
+        internal static void SwitchToDefaultContent()
+        {
+            Driver.GetDriver().SwitchTo().DefaultContent();
         }
 
         internal static List<string> GetWindowHandles()
@@ -116,7 +122,7 @@ namespace Framework.Pages
             actions.SendKeys(text);
             actions.Perform();
         }
-
+        
         internal static void CloseCurrentTab()
         {
             Driver.GetDriver().Close();

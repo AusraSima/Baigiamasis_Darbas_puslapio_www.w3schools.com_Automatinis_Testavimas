@@ -13,17 +13,29 @@ namespace Tests.w3schoolsTests
             Homepage.AcceptCookies();
         }
 
-        // Šį testą reikėtų suskaidyti į tris atskirus testus
         [Test]
-        public void CheckHTMLTutorials()
+        public void CheckWatchOurVideoField()
         {
-            HTMLTutorials.WatchOurVideoField();
-            HTMLTutorials.Open();
+            string expectedWatchOurVideoButton = "Watch our Video Tutorial »\r\nNEW";
+            string actualWatchOurVideoButton = HTMLTutorials.GetWatchOurVideoButtonText();
+            Assert.AreEqual(expectedWatchOurVideoButton, actualWatchOurVideoButton);
 
-            // Šis metodas turėtų būti kaip atskiras testas
+            HTMLTutorials.GoToVideoPage();
+
+            string expectedVideoTurorialTitle = "Play Video";
+            string actualVideoTurorialTitle = HTMLTutorials.GetPlayVideoButtonText();
+            Assert.AreEqual(expectedVideoTurorialTitle, actualVideoTurorialTitle);
+        }
+
+        [Test]
+        public void CheckTryItYourselfField()
+        {
             HTMLTutorials.TryItYourselfField();
-            
-            // Ši dalis taip pat turėtų būti kaip atskiras testas
+        }
+        
+        [Test]
+        public void CheckTestYourselfWithExercises()
+        {
             HTMLTutorials.TestYourselfWithExercises();
             string expectedExerciseAnswer = "Correct!";
             string actualExerciseAnswer = HTMLTutorials.GetExerciseAnswer();
