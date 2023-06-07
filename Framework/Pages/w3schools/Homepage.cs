@@ -74,6 +74,7 @@ namespace Framework.Pages.w3schools
 
         public static string GetBootcampsPageText()
         {
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.outputBootcamps);
             return Common.GetElementText(Locators.HomepageButtons.outputBootcamps);
         }
 
@@ -157,6 +158,7 @@ namespace Framework.Pages.w3schools
 
         public static string GetSignUpPageText()
         {
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.outputSignUp);
             return Common.GetElementText(Locators.HomepageButtons.outputSignUp);
         }
 
