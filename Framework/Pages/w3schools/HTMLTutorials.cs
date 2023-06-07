@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium.Support.Extensions;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Framework.Pages.w3schools
@@ -15,17 +12,7 @@ namespace Framework.Pages.w3schools
 
         public static string GetWatchOurVideoButtonText()
         {
-            // Ką daro šie paspaudimai ir koks jų tikslas?
-           
-
-            return Common.GetElementText(Locators.HTMLTutorialsButtons.inputVideoButton);
-            
-
-            
-
-
-            // Šis palaukimas nieko nedaro
-            //Common.WaitForElementToBeVisible(Locators.HTMLTutorialsButtons.videoTutorialsPage);            
+            return Common.GetElementText(Locators.HTMLTutorialsButtons.inputVideoButton);         
         }
 
         public static void GoToVideoPage()
@@ -38,7 +25,6 @@ namespace Framework.Pages.w3schools
             return Common.GetElementText(Locators.HTMLTutorialsButtons.playVideoButton);
         }
         
-
         public static void TryItYourselfField()
         {
             Common.Click(Locators.HTMLTutorialsButtons.inputTryItYourself);

@@ -123,12 +123,10 @@ namespace Framework.Pages.w3schools
         public static string GetGetCertifiedPageText() 
         {
             List<string> handles = Common.GetWindowHandles();
-            Common.SwitchToWindowByHandle(handles.Last());
-            Common.SwitchToWindowByHandle(handles.First());
+            Common.SwitchToWindowByHandle(handles.Last());           
             Common.WaitForElementToBeVisible(Locators.HomepageButtons.outputGetCertified);
             return Common.GetElementText(Locators.HomepageButtons.outputGetCertified);
-
-            
+            Common.SwitchToWindowByHandle(handles.First());
         }
 
         public static string GetCreateWebsiteButtonText()
@@ -174,6 +172,7 @@ namespace Framework.Pages.w3schools
 
         public static string GetLogInPageText()
         {
+            Common.WaitForElementToBeVisible(Locators.HomepageButtons.outputLogIn);
             return Common.GetElementText(Locators.HomepageButtons.outputLogIn);
         }
                 

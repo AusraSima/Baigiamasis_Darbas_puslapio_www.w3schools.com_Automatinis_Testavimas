@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization.Formatters;
-
-namespace Framework.Pages
+﻿namespace Framework.Pages
 {
     internal static class Locators
     {

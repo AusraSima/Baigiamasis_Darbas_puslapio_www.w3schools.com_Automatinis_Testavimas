@@ -4,7 +4,6 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using OpenQA.Selenium.Interactions;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Framework.Pages
 {
